@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Walking For Miracle</title>
+</head>
+
+<body>
+    <header class="wfm-header">
+        <!-- title -->
+        <h1 class="wfm-header__title">Walking For Miracle <br> season 2</h1>
+        <p class="wfm-header__desc">
+            함께 꿈꾸며 걸어요- <br>
+            4km 걸으면 책상 1개를 아이들에게 선물합니다~~
+        </p>
+        <!-- image -->
+        <img class="fit-picture" src="media/wfm_intro_image.png" alt="Walking For Miracle 소개 이미지">
+    </header>
+
+    <!-- 현재 걸음 수 -->
+    <p class="wfm-current-walk-count">지금까지 ~~ 걸음 걸었어요!</p>
+    <!-- 현재 스코어~ -->
+    <p id="wfm-table">이름 | 번호뒷자리 | 걸음수 | 총걸음수</p>
+
+    <!-- 입력받고, 서버로 보내기 *https://kiwi-choe.github.io/WebWorldTraining/ -> 진짜 서버로 -->
+    <form id="walkcount-form">
+        <label for="username">이름</label>
+        <input id="username" type="text" placeholder="이름" required />
+        <label for="phomenumber">전화번호 뒷자리</label>
+        <input id="phomenumber" type="tel" placeholder="전화번호 뒷자리 4개" maxlength="4" required />
+        <label for="walkcount">몇 걸음?</label>
+        <input id="walkcount" type="text" placeholder="몇걸음?" required />
+        <input id="submit" type="submit" value="입력" />
+        <a href="#">안 될 땐 카카오톡 빛의교회 채널에 올려주세요~[카카오톡빛의교회채녈 연결]</a>
+    </form>
+
+    <h1 id="completed-msg" class="hidden"></h1>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
