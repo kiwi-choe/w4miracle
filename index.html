@@ -6,6 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Walking For Miracle</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
     </header>
 
     <!-- 현재 걸음 수 -->
-    <p class="wfm-current-walk-count">지금까지 ~~ 걸음 걸었어요!</p>
+    <p class="wfm-current-walk-count">지금까지 <span id="totalWalkCnt">0</span> 걸음 걸었어요!</p>
     <!-- 현재 스코어~ -->
     <p id="wfm-table">이름 | 번호뒷자리 | 걸음수 | 총걸음수</p>
 
