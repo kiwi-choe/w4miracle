@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Walking For Miracle</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style2.css">
+
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<header id="header">
+			<h1 class="header__logo"><strong>WALKING</strong>For Miracle</h1>
+		</header>
+		<div id="container">
+			<div class="inner">
+				<section id="chart">
+					<div class="chart__inner">
+						<span class="chart__text">지금까지</span>
+						<span class="chart__value"></span>
+						<span class="chart__text">걸음 걸었어요.</span>
+					</div>
+					<div class="chart__process">
+						<div class="process__track"></div>
+						<span class="process__thumb"></span>
+					</div>
+				</section>
+				<section id="form">
+					<form id="walkCount-form">
+						<h3 class="section__title">이만큼 걸었어요!</h3>
+						<div class="input__box">
+							<label for="username">이름</label>
+							<input type="text" id="username" placeholder="이름"/>
+						</div>
+						<div class="input__box">
+							<label for="phoneNumber">전화번호 뒷자리</label>
+							<input type="text" id="phoneNumber" placeholder="전화번호 뒤 4자리"/>
+						</div>
+						<div class="input__box">
+							<label for="walkCount">몇 걸음?</label>
+							<input type="text" id="walkCount" placeholder="걸음수" />
+						</div>
+						<div class="btns">
+							<input class="btn" type="submit" value="입력"/>
+							<input class="btn" type="button" value="더보기" />
+						</div>
+					</form>
+				</section>
+				<section id="board">
+					<table>
+						<thead>
+							<tr>
+								<th class="username">이름</th>
+								<th class="phoneNumber">번호 뒤 4자리</th>
+								<th class="walkCount">오늘 걸음</th>
+								<th class="totalWalkCount">총 걸음</th>
+							</tr>
+						</thead>
+						<tbody id="users">
+						</tbody>
+					</table>
+				</section>
+			</div>
+		</div>
+		<footer id="footer">
+			<div class="inner">
+				<p class="footer__notice">입력이 되지 않을 때는 카카오톡 빛의교회 채널에 올려주시면 적용해 드리겠습니다.</p>
+				<p class="footer__info">문의: 010-0000-0000</p>
+				<h6 class="footer__logo">빛의 교회</h6>
+			</div>
+		</footer>
+	</div>
+	<script src="app2.js"></script>
+</body>
+</html>
