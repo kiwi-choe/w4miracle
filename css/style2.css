@@ -1,0 +1,153 @@
+/* font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+	font-family: 'Poppins',
+	sans-serif;
+	background-color: #f0f0f0;
+}
+
+section {
+	margin-bottom: 40px;
+}
+section:last-child {
+	margin-bottom: 0;
+}
+
+.inner {
+	max-width: 440px;
+	margin: 0 auto;
+	padding: 40px;
+}
+
+/* HEADER */
+#header {
+	background-color: #8AB6D6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0;
+}
+
+.header__logo {
+	font-size: 20px;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	line-height: 1.2em;
+}
+
+.header__logo strong {
+	display: block;
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+/* CONTAINER */
+#chart {
+	position: relative;
+}
+
+.chart__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.chart__text {
+	font-size: 12px;
+} 
+.chart__value {
+	font-size: 40px;
+	font-weight: 700;
+	margin: .2em 0;
+}
+.chart__process {
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+}
+.process__track {
+	width: 100%;
+	height: 100%;
+	border: 3px solid #a9a9a9;
+	border-radius: 50%;
+}
+
+.process__thumb {
+	
+}
+
+#form {}
+.section__title {
+	font-size: 16px;
+	margin-bottom: 1em;
+}
+
+.input__box {
+	margin-bottom: 16px;
+}
+
+label {
+	display: block;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+input[type="text"] {
+	border-bottom: 1px solid gray;
+	width: 100%;
+	font-size: 14px;
+	height: 2em;
+}
+input[type="text"]::placeholder {
+	color: #a9a9a9;
+}
+
+.btns {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn {
+	background-color: coral;
+	color: #fff;
+	cursor: pointer;
+	width: 60px;
+	height: 32px;
+	text-align: center;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+#board {}
+#board table {
+	border-top: 2px solid gray;
+}
+#board table tr {
+	font-size: 14px;
+	height: 2.4em;
+	line-height: 2.4em;
+	text-align: center;
+	border-bottom: 1px solid #dcdcdc;
+}
+
+#board table tr th {
+	font-weight: 700;
+}
+
+/* FOOTER */
+#footer {
+	text-align: center;
+}
+.footer__notice {
+	font-size: 12px;
+}
+.footer__info {
+	font-size: 12px;
+	margin: 12px 0 50px 0;
+}
