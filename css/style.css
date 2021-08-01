@@ -4,13 +4,14 @@ font-family: 'Poppins', sans-serif; */
 
 body {
 	font-family: 'Poppins',
-	sans-serif;
+		sans-serif;
 	background-color: #f0f0f0;
 }
 
 section {
 	margin-bottom: 40px;
 }
+
 section:last-child {
 	margin-bottom: 0;
 }
@@ -27,7 +28,8 @@ section:last-child {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 10px 0;
+	/* padding: 10px 0; */
+	padding: 22px 0;
 }
 
 .header__logo {
@@ -58,19 +60,25 @@ section:last-child {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
 .chart__text {
-	font-size: 12px;
-} 
+	/* font-size: 12px; */
+	font-size: 14px;
+}
+
 .chart__value {
-	font-size: 40px;
+	/* font-size: 40px; */
+	font-size: 44px;
 	font-weight: 700;
 	margin: .2em 0;
 }
+
 .chart__process {
 	margin: 0 auto;
 	width: 200px;
 	height: 200px;
 }
+
 .process__track {
 	width: 100%;
 	height: 100%;
@@ -78,13 +86,13 @@ section:last-child {
 	border-radius: 50%;
 }
 
-.process__thumb {
-	
-}
+.process__thumb {}
 
 #form {}
+
 .section__title {
-	font-size: 16px;
+	/* font-size: 16px; */
+	font-size: 18px;
 	margin-bottom: 1em;
 }
 
@@ -94,15 +102,20 @@ section:last-child {
 
 label {
 	display: block;
-	font-size: 12px;
-	margin-bottom: 8px;
+	/* font-size: 12px; */
+	font-size: 14px;
+	/* margin-bottom: 8px; */
+	margin-bottom: 10px;
 }
+
 input[type="text"] {
 	border-bottom: 1px solid gray;
 	width: 100%;
-	font-size: 14px;
+	/* font-size: 14px; */
+	font-size: 17px;
 	height: 2em;
 }
+
 input[type="text"]::placeholder {
 	color: #a9a9a9;
 }
@@ -116,20 +129,26 @@ input[type="text"]::placeholder {
 	background-color: coral;
 	color: #fff;
 	cursor: pointer;
-	width: 60px;
-	height: 32px;
+	/* width: 60px; */
+	width: 100%;
+	height: 40px;
 	text-align: center;
 	border-radius: 4px;
-	font-size: 14px;
+	/* font-size: 14px; */
+	font-size: 16px;
 	font-weight: 600;
+	/* margin-top: 10px; */
 }
 
 #board {}
+
 #board table {
 	border-top: 2px solid gray;
 }
+
 #board table tr {
-	font-size: 14px;
+	/* font-size: 14px; */
+	font-size: 16px;
 	height: 2.4em;
 	line-height: 2.4em;
 	text-align: center;
@@ -140,13 +159,27 @@ input[type="text"]::placeholder {
 	font-weight: 700;
 }
 
+.seeMore {
+	background-color: #dedede;
+	color: black;
+	cursor: pointer;
+	/* width: 60px; */
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+}
+
 /* FOOTER */
 #footer {
 	text-align: center;
 }
+
 .footer__notice {
 	font-size: 12px;
 }
+
 .footer__info {
 	font-size: 12px;
 	margin: 12px 0 50px 0;

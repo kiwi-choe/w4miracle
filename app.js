@@ -24,24 +24,6 @@ db.settings({
   timestampsInSnapshots: true
 });
 
-// 총 걸음수 조회
-// GET  총 걸음 수
-function selectTotalWalkCount() {
-  db
-    .collection('totalWalkCnt')
-    .get()
-    .then(snapshot => {
-      snapshot.docs.forEach(doc => {
-        if (doc.data().totalWalkCnt > 0) {
-          totalWalkCnt.textContent = doc.data().totalWalkCnt.toLocaleString();
-        } else {
-          totalWalkCnt.textContent = 0
-        }
-      })
-    })
-}
-selectTotalWalkCount();
-
 // 걸음 입력한 교인 목록 조회
 // GET  입력된 걸음 목록
 function selectUserList() {
@@ -72,6 +54,7 @@ function selectUserList() {
         tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
         userTable.appendChild(tr);
       })
+      totalWalkCnt.textContent = snapshot.docs[0].data().totalWalkCount.toLocaleString();
     })
 }
 selectUserList();
@@ -84,69 +67,33 @@ function clearInput() {
 
 async function onSubmit(info) {
   info.preventDefault();
-  // console.log(info);
 
   if (validateInputData(username.value, phoneNumber.value, walkCount.value)) {
+    
+    const walkCountNum = Number(walkCount.value);
     const today = new Date();
 
+    if (!Boolean(walkCountNum)) {
+      alert('걸음수는 숫자로 입력해주세요');
+      return;
+    } 
+
     try {
-      // users에 입력 
-      // 존재하지 않으면 새로 입력
-      // 존재하면 walks update
       const existUserWalks = await userExist(username.value, phoneNumber.value);
+
       if (existUserWalks) {
         const userWalks = {
-          walkCount: Number(walkCount.value),
+          walkCount: walkCountNum,
           createdAt: today.toISOString()
         }
-        
-        db
-          .collection('users')
-          .doc(`${username.value}-${phoneNumber.value}`)
-          .update({
-            walks: existUserWalks.concat(userWalks)
-          })
+        // update
+        updateUsersCollection(existUserWalks, userWalks);
       } else {
-        db
-          .collection('users')
-          .doc(`${username.value}-${phoneNumber.value}`)
-          .set({
-            username: username.value,
-            phoneNumber: phoneNumber.value,
-            walks: [{
-              walkCount: Number(walkCount.value),
-              createdAt: today.toISOString()
-            }]
-          })
+        // create
+        createUsersCollection(walkCountNum);
       }
-
-      // 둘 중 하나가 안 되고 넘어가버리는 현상이 생겨서 promise.all로 묶고 콜백함수 실행
-      await Promise.all([
-        // walkLog에 입력
-			  // POST  걸음데이타
-        db
-          .collection('walkLog')
-          .add({
-            username: username.value,
-            phoneNumber: phoneNumber.value,
-            walkCount: Number(walkCount.value),
-            totalWalkCount: Number(totalWalkCnt.textContent.replace(',', '')) + Number(walkCount.value),
-            createdAt: today.toISOString()
-          }),
-        // 총 걸음 수 입력
-        db
-          .collection('totalWalkCnt')
-          .doc('totalWalkCnt')
-          .update({
-            totalWalkCnt: Number(totalWalkCnt.textContent.replace(',', '')) + Number(walkCount.value)
-          })
-      ])
-      .then(() => {
-        userTable.textContent = '';
-        selectTotalWalkCount();
-        clearInput();
-        selectUserList();
-      })
+      // addWalkLog
+      addWalkLog(walkCountNum);
     } catch (e) {
     } 
   } else {
@@ -172,6 +119,8 @@ function validateInputData(username, phoneNumber, walkCount) {
     walkCount !== "")
 }
 
+
+// 기존에 존재하는 유저인지?
 async function userExist(username, phoneNumber) {
   const userWalk = await db
     .collection('users')
@@ -181,4 +130,52 @@ async function userExist(username, phoneNumber) {
     .catch(() => false)
   
   return userWalk;
+}
+
+
+// 사용자 걸음 update
+function updateUsersCollection(existUserWalks, userWalks) {
+  db
+    .collection('users')
+    .doc(`${username.value}-${phoneNumber.value}`)
+    .update({
+      walks: existUserWalks.concat(userWalks)
+    })
+}
+
+
+// 사용자 걸음 create
+function createUsersCollection(walkCountNum) {
+  const today = new Date();
+  db
+    .collection('users')
+    .doc(`${username.value}-${phoneNumber.value}`)
+    .set({
+      username: username.value,
+      phoneNumber: phoneNumber.value,
+      walks: [{
+        walkCount: walkCountNum,
+        createdAt: today.toISOString()
+      }]
+    })
+}
+
+
+// 걸음로그 입력
+function addWalkLog(walkCountNum) {
+  const today = new Date();
+  db
+    .collection('walkLog')
+    .add({
+      username: username.value,
+      phoneNumber: phoneNumber.value,
+      walkCount: walkCountNum,
+      totalWalkCount: Number(totalWalkCnt.textContent.replace(',', '')) + walkCountNum,
+      createdAt: today.toISOString()
+    })
+  .then(() => {
+    userTable.textContent = '';
+    clearInput();
+    selectUserList();
+  })
 }
