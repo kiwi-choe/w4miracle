@@ -12,7 +12,7 @@ const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
 
 const GET_WALKLOG_LIMIT_COUNT = 5;
-let lastVisible = 2;
+let lastVisible = -1;
 
 function clearInput() {
   username.value = "";
