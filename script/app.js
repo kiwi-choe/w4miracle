@@ -6,12 +6,21 @@ const walkCount = walkCountInputForm.querySelector("#walkCount");
 const totalWalkCnt = document.querySelector(".chart__value");
 const userTable = document.querySelector("#users");
 
+const seeMoreBtn = document.querySelector("#seeMore");
+
 const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
 
-/**
- * DB
- */
+const GET_WALKLOG_LIMIT_COUNT = 5;
+let lastVisible = 2;
+
+function clearInput() {
+  username.value = "";
+  phoneNumber.value = "";
+  walkCount.value = "";
+}
+
+// Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCg-XnCKH6zScJY_04rXUf0Fmxbza_JnGU",
   authDomain: "walking4miracle.firebaseapp.com",
@@ -21,28 +30,94 @@ const firebaseConfig = {
   appId: "1:414251762442:web:242b6a090d8013a7d9f0f3",
   measurementId: "G-X0KSZNYM6V",
 };
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 db.settings({
   timestampsInSnapshots: true,
 });
 
+// GET 총 걸음 수
+function selectTotalWalkCount() {
+  getTotalWalkCount();
+}
+selectTotalWalkCount();
+
+// GET  입력된 걸음 목록
+function selectUserList() {
+  getWalkLogs();
+}
+selectUserList();
+
+// 입력
+async function onSubmit(info) {
+  info.preventDefault();
+
+  if (!validateInputData(username.value, phoneNumber.value, walkCount.value)) {
+    alert("이름, 번호, 걸음수 입력해주세요!");
+    return;
+  }
+
+  if (!isNumber(walkCount.value)) {
+    alert("걸음수는 숫자로 입력해주세요");
+    return;
+  }
+
+  try {
+    const existUserWalks = await userExist(username.value, phoneNumber.value);
+    if (existUserWalks) {
+      await updateUser(
+        username.value,
+        phoneNumber.value,
+        existUserWalks,
+        walkCount.value
+      );
+    } else {
+      await createUser(username.value, phoneNumber.value, walkCount.value);
+    }
+
+    // POST 걸음데이타
+    const latestTotalWalkCount = await getTotalWalkCount();
+    addWalkLog(
+      username.value,
+      phoneNumber.value,
+      latestTotalWalkCount,
+      walkCount.value
+    );
+  } catch (e) {
+    console.log(e);
+  }
+}
+walkCountInputForm.addEventListener("submit", onSubmit);
+
+function showCompletedMsg(username, walkCount) {
+  completedMsg.innerText = `${username} ${walkCount}걸음 입력 완료!`;
+  completedMsg.classList.remove("hidden");
+}
+
+function hideSeeMoreButton() {
+  seeMoreBtn.style.setProperty("display", "none");
+  console.log("hideSeeMoreButton");
+}
+function showSeeMoreButton() {
+  seeMoreBtn.style.setProperty("display", "block");
+}
+
+function validateInputData(username, phoneNumber, walkCount) {
+  return username !== "" && phoneNumber !== "" && walkCount !== "";
+}
+
+// 더보기
+function onClickSeeMore() {
+  getNextWalkLogs();
+}
+seeMoreBtn.addEventListener("click", onClickSeeMore);
+/**
+ * DB
+ */
 function getUserDocName(username, phoneNumber) {
   return `${username}-${phoneNumber}`;
 }
-
-function clearInput() {
-  username.value = "";
-  phoneNumber.value = "";
-  walkCount.value = "";
-}
-
-// GET  총 걸음 수
-function selectTotalWalkCount() {
-  this.getTotalWalkCount();
-}
-selectTotalWalkCount();
 
 async function getTotalWalkCount() {
   const latestWalkLog = await db
@@ -64,86 +139,90 @@ async function getTotalWalkCount() {
   return latestWalkLog;
 }
 
-// GET  입력된 걸음 목록
-function selectUserList() {
-  this.getWalkLogs();
-}
-selectUserList();
 async function getWalkLogs() {
   await db
     .collection(COL_WALKLOG)
     .orderBy("createdAt", "desc")
+    .limit(GET_WALKLOG_LIMIT_COUNT)
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-        const tr = document.createElement("tr");
-        const tdUsername = document.createElement("td");
-        const tdPhoneNumber = document.createElement("td");
-        const tdWalkCount = document.createElement("td");
-        const tdTotalWalkCount = document.createElement("td");
         const walkCount = Number(doc.data().walkCount).toLocaleString();
         const totalWalkCount = Number(
           doc.data().totalWalkCount
         ).toLocaleString();
-        tdUsername.setAttribute("class", "username");
-        tdPhoneNumber.setAttribute("class", "phoneNumber");
-        tdWalkCount.setAttribute("class", "walkCount");
-        tdTotalWalkCount.setAttribute("class", "totalWalkCount");
-        tdUsername.textContent = doc.data().username;
-        tdPhoneNumber.textContent = doc.data().phoneNumber;
-        tdWalkCount.textContent = walkCount;
-        tdTotalWalkCount.textContent = totalWalkCount;
-        tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
-        userTable.appendChild(tr);
+
+        addWalkLogTable(
+          doc.data().username,
+          doc.data().phoneNumber,
+          walkCount,
+          totalWalkCount
+        );
       });
+      // check if last item
+      if (snapshot.docs.length < GET_WALKLOG_LIMIT_COUNT) {
+        hideSeeMoreButton();
+        return;
+      }
+      lastVisible = snapshot.docs[snapshot.docs.length - 1];
+      console.log("last", lastVisible);
     });
+}
+
+async function getNextWalkLogs() {
+  await db
+    .collection(COL_WALKLOG)
+    .orderBy("createdAt", "desc")
+    .startAfter(lastVisible)
+    .limit(GET_WALKLOG_LIMIT_COUNT)
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        const walkCount = Number(doc.data().walkCount).toLocaleString();
+        const totalWalkCount = Number(
+          doc.data().totalWalkCount
+        ).toLocaleString();
+
+        addWalkLogTable(
+          doc.data().username,
+          doc.data().phoneNumber,
+          walkCount,
+          totalWalkCount
+        );
+      });
+      // check if last item
+      if (snapshot.docs.length < GET_WALKLOG_LIMIT_COUNT) {
+        hideSeeMoreButton();
+        return;
+      }
+      lastVisible = snapshot.docs[snapshot.docs.length - 1];
+      console.log("last", lastVisible);
+    });
+}
+
+function addWalkLogTable(username, phoneNumber, walkCount, totalWalkCount) {
+  const tr = document.createElement("tr");
+  const tdUsername = document.createElement("td");
+  const tdPhoneNumber = document.createElement("td");
+  const tdWalkCount = document.createElement("td");
+  const tdTotalWalkCount = document.createElement("td");
+
+  tdUsername.setAttribute("class", "username");
+  tdPhoneNumber.setAttribute("class", "phoneNumber");
+  tdWalkCount.setAttribute("class", "walkCount");
+  tdTotalWalkCount.setAttribute("class", "totalWalkCount");
+  tdUsername.textContent = username;
+  tdPhoneNumber.textContent = phoneNumber;
+  tdWalkCount.textContent = walkCount;
+  tdTotalWalkCount.textContent = totalWalkCount;
+  tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
+  userTable.appendChild(tr);
 }
 
 function isNumber(walkCount) {
   const walkCountNo = Number(walkCount);
-  return (String(walkCountNo) !== 'NaN');
+  return String(walkCountNo) !== "NaN";
 }
-
-async function onSubmit(info) {
-  info.preventDefault();
-
-  if (!validateInputData(username.value, phoneNumber.value, walkCount.value)) {
-    alert("이름, 번호, 걸음수 입력해주세요!");
-    return;
-  }
-  
-  if (!isNumber(walkCount.value)) {
-    alert('걸음수는 숫자로 입력해주세요');
-    return;
-  }
-  
-  try {
-    const existUserWalks = await userExist(username.value, phoneNumber.value);
-    if (existUserWalks) {
-      await updateUser(
-        username.value,
-        phoneNumber.value,
-        existUserWalks,
-        walkCount.value
-      );
-    } else {
-      await createUser(username.value, phoneNumber.value, walkCount.value);
-    }
-
-    // POST  걸음데이타
-    const latestTotalWalkCount = await getTotalWalkCount();
-    addWalkLog(
-      username.value,
-      phoneNumber.value,
-      latestTotalWalkCount,
-      walkCount.value
-    );
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-walkCountInputForm.addEventListener("submit", onSubmit);
 
 async function updateUser(username, number, existUserWalks, walkCount) {
   const today = new Date();
@@ -187,25 +266,16 @@ async function addWalkLog(username, number, latestTotalWalkCount, walkCount) {
       createdAt: today.toISOString(),
     })
     .then(() => {
-      userTable.textContent = "";
-      selectTotalWalkCount();
-      clearInput();
-      selectUserList();
+      initView();
     });
 }
 
-function showCompletedMsg(username, walkCount) {
-  completedMsg.innerText = `${username} ${walkCount}걸음 입력 완료!`;
-  completedMsg.classList.remove("hidden");
-}
-
-function hideInputForm() {
-  // walkCountInputForm.classList.add("hidden")
-  walkCountInputForm.style.setProperty("display", "none");
-}
-
-function validateInputData(username, phoneNumber, walkCount) {
-  return username !== "" && phoneNumber !== "" && walkCount !== "";
+function initView() {
+  userTable.textContent = "";
+  selectTotalWalkCount();
+  clearInput();
+  selectUserList();
+  showSeeMoreButton();
 }
 
 async function userExist(username, phoneNumber) {

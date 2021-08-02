@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
 	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
 </head>
+
 <body>
 	<div id="wrap">
 		<header id="header">
@@ -35,19 +37,18 @@
 						<h3 class="section__title">이만큼 걸었어요!</h3>
 						<div class="input__box">
 							<label for="username">이름</label>
-							<input type="text" id="username" placeholder="이름"/>
+							<input type="text" id="username" placeholder="이름" />
 						</div>
 						<div class="input__box">
 							<label for="phoneNumber">전화번호 뒷자리</label>
-							<input type="text" id="phoneNumber" placeholder="전화번호 뒤 4자리"/>
+							<input type="text" id="phoneNumber" placeholder="전화번호 뒤 4자리" />
 						</div>
 						<div class="input__box">
 							<label for="walkCount">몇 걸음?</label>
 							<input type="text" id="walkCount" placeholder="걸음수" />
 						</div>
 						<div class="btns">
-							<input class="btn" type="submit" value="등록하기"/>
-							<!-- <input class="btn" type="button" value="더보기" /> -->
+							<input class="btn" type="submit" value="등록하기" />
 						</div>
 					</form>
 				</section>
@@ -66,7 +67,7 @@
 					</table>
 				</section>
 				<div class="btns">
-					<input class="seeMore" type="button" value="더 보기" />
+					<input id="seeMore" type="button" value="더 보기" />
 				</div>
 			</div>
 		</div>
@@ -75,8 +76,8 @@
 				<p class="footer__notice">입력이 되지 않을 때는 카카오톡 '빛의교회' 채널에 올려주시면 적용해 드리겠습니다.</p>
 				<!-- <p class="footer__info"><i data-src="../assets/imgs/qicon.png"></i> 문의 | 카카오 채널 '빛의 교회'</p> -->
 				<p class="footer__info">
-					<img class="footer__icon" src="../assets/imgs/qicon.png" alt="img_icon"></img> 
-					<a class="footer__link" href="http://pf.kakao.com/_nUIBxb">문의 | 카카오 채널 '빛의 교회'</a> 
+					<img class="footer__icon" src="../assets/imgs/qicon.png" alt="img_icon"></img>
+					<a class="footer__link" href="http://pf.kakao.com/_nUIBxb">문의 | 카카오 채널 '빛의 교회'</a>
 				</p>
 				<!-- <h6 class="footer__logo">빛의 교회</h6> -->
 			</div>
@@ -84,4 +85,5 @@
 	</div>
 	<script src="../script/app.js"></script>
 </body>
+
 </html>
