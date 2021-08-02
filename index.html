@@ -1,82 +1,85 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Walking For Miracle</title>
 	<link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/style.css">
-
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+	<link rel="stylesheet" href="./css/indexStyle.css">
 </head>
-
 <body>
 	<div id="wrap">
 		<header id="header">
-			<h1 class="header__logo"><strong>WALKING</strong>For Miracle</h1>
+			<!-- <div class="header__logo"></div> -->
+			<img class="header__logo" src="./assets/imgs/w4mlogo.png" alt="img_w4m">
 		</header>
+
 		<div id="container">
 			<div class="inner">
-				<section id="chart">
-					<div class="chart__inner">
-						<span class="chart__text">지금까지</span>
-						<span class="chart__value"></span>
-						<span class="chart__text">걸음 걸었어요.</span>
+				<section id="upper">
+					<p class="text">
+						2021년,<br>
+						올해 W4M 시즌 2는 케냐, 레바논과 필리핀의 아이들의‘공부하고 싶은 꿈’을 이루어 주기 위해 책상을 보내주고 싶습니다. 
+					</p>
+					<p class="text">
+						5만 보를 걸으면 ‘꿈꾸는 책상’ 하나를 선교지에 선물할 수 있습니다.<br>
+						혼자서 걷기 힘들다면 가족이 함께 걷고, 교회 식구들이 함께 걸으면서 선교지에 ‘꿈꾸는 책상’을 보내줍시다. 
+					</p>
+					<p class="text">
+						<span class="bold orange">‘Build up each other’</span><br> 
+						아이들의 꿈을 이루어 주기 위해 걷고,<br>
+						케냐, 레바논 그리고 필리핀 아이들도 함께 걸으며<br>
+						서로의 꿈을 응원할 수 있는 시간이 되길 소망합니다. 
+					</p>
+				</section>
+
+				<section id="mid">
+					<img class="mid__img" src="./assets/imgs/kenya.jpg" alt="img_kenya">
+					<div class="btn__wrap">
+						<a class="btn__participate" href="./pages/participate.html">참여하기</a>
 					</div>
-					<div class="chart__process">
-						<div class="process__track"></div>
-						<span class="process__thumb"></span>
-					</div>
 				</section>
-				<section id="form">
-					<form id="walkCount-form">
-						<h3 class="section__title">이만큼 걸었어요!</h3>
-						<div class="input__box">
-							<label for="username">이름</label>
-							<input type="text" id="username" placeholder="이름" />
-						</div>
-						<div class="input__box">
-							<label for="phoneNumber">전화번호 뒷자리</label>
-							<input type="text" id="phoneNumber" placeholder="전화번호 뒤 4자리" />
-						</div>
-						<div class="input__box">
-							<label for="walkCount">몇 걸음?</label>
-							<input type="text" id="walkCount" placeholder="걸음수" />
-						</div>
-						<div class="btns">
-							<input class="btn" type="submit" value="입력" />
-							<input class="btn" type="button" value="더보기" />
-						</div>
-					</form>
+
+				<section id="lower">
+					<p class="text">
+						<span class="bold">What is “Walking for Miracle” ?</span>
+					</p>
+					<p class="text">
+						Walking for Miracle 은<br>
+						‘코로나 19’로 직접 선교지를 방문하지 못하는 상황에서 시작된 걷기 무브먼트입니다.<br> 
+						비록 선교 현장에 방문할 수는 없지만 <br>
+						각자 삶의 자리에서 걸으면서 기도하고, <br>
+						걸음 수만큼 재정을 나눠서 선교지를 보내주는 것으로 
+						선교에 동참하게 됩니다. 
+					</p>
+					<p class="text">
+						우리는 레바논(시리아 난민들)을 위해서 걷고<br>
+						레바논 친구들은 케냐의 마사이 어린이들을 위해서 걷고
+						케냐 마사이 어린이들은 필리핀 산지족 교회 어린이를 생각하면서 걷게 됩니다. 
+					</p>
+					<p class="text">
+						코로나 19가 펜데믹이 되어 모두가 고통받는 때에 
+						우리의 기도와 걸음으로 세상을 하나로 연결하고 
+						세상을 회복하는 아름다운 꿈을 꿉니다. 
+					</p>
+					<p class="text">
+						<span class="bold">“Hope is faster than covid 19!”</span>
+					</p>
 				</section>
-				<section id="board">
-					<table>
-						<thead>
-							<tr>
-								<th class="username">이름</th>
-								<th class="phoneNumber">번호 뒤 4자리</th>
-								<th class="walkCount">오늘 걸음</th>
-								<th class="totalWalkCount">총 걸음</th>
-							</tr>
-						</thead>
-						<tbody id="users">
-						</tbody>
-					</table>
+
+				<section id="bottom">
+					<img class="bottom__img" src="./assets/imgs/map.jpg" alt="img_map">
 				</section>
+
+				
 			</div>
 		</div>
-		<footer id="footer">
-			<div class="inner">
-				<p class="footer__notice">입력이 되지 않을 때는 카카오톡 빛의교회 채널에 올려주시면 적용해 드리겠습니다.</p>
-				<p class="footer__info">문의: 010-0000-0000</p>
-				<h6 class="footer__logo">빛의 교회</h6>
-			</div>
-		</footer>
-	</div>
-	<script src="script/app.js"></script>
-</body>
 
+		<footer id="footer">
+			<img class="footer__logo" src="./assets/imgs/logo.png" alt="img_logo">
+		</footer>
+
+	</div>
+</body>
 </html>

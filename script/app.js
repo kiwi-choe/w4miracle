@@ -98,6 +98,12 @@ async function getWalkLogs() {
       });
     });
 }
+
+function isNumber(walkCount) {
+  const walkCountNo = Number(walkCount);
+  return (String(walkCountNo) !== 'NaN');
+}
+
 async function onSubmit(info) {
   info.preventDefault();
 
@@ -105,19 +111,23 @@ async function onSubmit(info) {
     alert("이름, 번호, 걸음수 입력해주세요!");
     return;
   }
-
+  
+  if (!isNumber(walkCount.value)) {
+    alert('걸음수는 숫자로 입력해주세요');
+    return;
+  }
+  
   try {
     const existUserWalks = await userExist(username.value, phoneNumber.value);
-    console.log("existUserWalks: " + existUserWalks);
     if (existUserWalks) {
-      updateUser(
+      await updateUser(
         username.value,
         phoneNumber.value,
         existUserWalks,
         walkCount.value
       );
     } else {
-      createUser(username.value, phoneNumber.value, walkCount.value);
+      await createUser(username.value, phoneNumber.value, walkCount.value);
     }
 
     // POST  걸음데이타
@@ -160,7 +170,7 @@ async function createUser(username, number, walkCount) {
     .doc(getUserDocName(username, number))
     .set({
       username: username,
-      phoneNumber: phoneNumber,
+      phoneNumber: number,
       walks: [userWalk],
     });
 }
