@@ -23,6 +23,10 @@ a:visited {
   color: black;
 }
 
+.text {
+  text-align: center;
+}
+
 .inner {
   max-width: 440px;
   margin: 0 auto;
