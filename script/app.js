@@ -63,6 +63,11 @@ async function onSubmit(info) {
     return;
   }
 
+  if (!isNumber(phoneNumber.value)) {
+    alert("핸드폰 번호는 숫자로 입력해주세요");
+    return;
+  }
+
   try {
     const existUserWalks = await userExist(username.value, phoneNumber.value);
     if (existUserWalks) {
