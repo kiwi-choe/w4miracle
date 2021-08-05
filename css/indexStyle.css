@@ -6,10 +6,10 @@ font-family: 'Poppins', sans-serif; */
   html { font-size: 50%; }
 }
 @media screen and (min-width:331px) and (max-width:380px) {
-  html { font-size: 60%; }
+  html { font-size: 55%; }
 } 
 @media screen and (min-width:381px) and (max-width: 740px) {
-  html { font-size: 70%; }
+  html { font-size: 65%; }
 }
 @media (min-width:741px) { 
   html { font-size: 80%; }
