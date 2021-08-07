@@ -10,6 +10,8 @@ const seeMoreBtn = document.querySelector("#seeMore");
 
 const headerLogoSection = document.querySelector("#header");
 
+const deskAnimImage = document.querySelector(".img_desk_anmation");
+
 const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
 
@@ -56,9 +58,22 @@ function selectUserList() {
 }
 selectUserList();
 
+deskAnimImage.addEventListener("animationstart", () => {});
+deskAnimImage.addEventListener("animationend", () => {
+  deskAnimImage.classList.remove("active");
+  deskAnimImage.style.setProperty("display", "none");
+});
+function showDeskAnimation() {
+  deskAnimImage.style.setProperty("display", "block");
+  deskAnimImage.classList.toggle("active");
+}
+
 // 입력
 async function onSubmit(info) {
   info.preventDefault();
+
+  // todo [banny] 조건 수정 필요.
+  showDeskAnimation();
 
   if (!validateInputData(username.value, phoneNumber.value, walkCount.value)) {
     alert("이름, 번호, 걸음수 입력해주세요!");
