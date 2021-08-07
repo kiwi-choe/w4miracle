@@ -202,17 +202,16 @@ input[type="text"]::placeholder {
 /* FOOTER */
 #footer {
   height: 200px;
+  font-size: 15px;
 }
 
 .footer__notice {
-  font-size: 15px;
-  line-height: 1.8em;
+  line-height: normal;
 }
 
 .footer__info {
-  height: 80px;
-  font-size: 15px;
-  margin: 16px 0 50px 0;
+  height: 40px;
+  margin: 16px 0 16px 0;
 }
 
 .footer__icon {
@@ -222,6 +221,9 @@ input[type="text"]::placeholder {
 
 .footer__link {
   vertical-align: middle;
+}
+.how_to_offering {
+  line-height: normal;
 }
 
 /* 반응형 - width <= 440 */
