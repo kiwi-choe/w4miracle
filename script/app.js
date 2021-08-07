@@ -8,6 +8,8 @@ const userTable = document.querySelector("#users");
 
 const seeMoreBtn = document.querySelector("#seeMore");
 
+const headerLogoSection = document.querySelector("#header");
+
 const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
 
@@ -19,6 +21,11 @@ function clearInput() {
   phoneNumber.value = "";
   walkCount.value = "";
 }
+
+function onClickHeaderLogo() {
+  window.location.href = "../index.html";
+}
+headerLogoSection.addEventListener("click", onClickHeaderLogo);
 
 // Initialize Firebase
 const firebaseConfig = {
