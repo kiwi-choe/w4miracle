@@ -4,6 +4,8 @@ const phoneNumber = walkCountInputForm.querySelector("#phoneNumber");
 const walkCount = walkCountInputForm.querySelector("#walkCount");
 
 const totalWalkCnt = document.querySelector(".chart__value");
+const elNumOfDesks = document.querySelector(".chart__numOfDesks");
+const elDeskImg = document.querySelector("#chart__deskImg");
 const userTable = document.querySelector("#users");
 
 const seeMoreBtn = document.querySelector("#seeMore");
@@ -12,8 +14,12 @@ const headerLogoSection = document.querySelector("#header");
 
 const deskAnimImage = document.querySelector(".img_desk_anmation");
 
+const COL_ADMIN = "admin";
 const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
+
+const DOC_CHART = 'chart';
+const DOC_URLS = 'urls';
 
 const GET_WALKLOG_LIMIT_COUNT = 5;
 let lastVisible = -1;
@@ -57,6 +63,12 @@ function selectUserList() {
   getWalkLogs();
 }
 selectUserList();
+
+// 누적 책상 수 가져오기
+async function selectNumOfDesks() {
+  await showNumOfDesks();
+}
+selectNumOfDesks();
 
 deskAnimImage.addEventListener("animationstart", () => {});
 deskAnimImage.addEventListener("animationend", () => {
@@ -111,11 +123,39 @@ async function onSubmit(info) {
       latestTotalWalkCount,
       walkCount.value
     );
+
+    await updateNumOfDesks(latestTotalWalkCount, walkCount.value);
+    showNumOfDesks();
+
   } catch (e) {
     console.log(e);
   }
 }
 walkCountInputForm.addEventListener("submit", onSubmit);
+
+
+async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
+  const numOfDesks = (latestTotalWalkCount + Number(walkCount)) / 50000;
+
+  await db
+    .collection(COL_ADMIN)
+    .doc(DOC_CHART)
+    .update({
+      numOfDesks: Math.floor(numOfDesks)
+    })
+}
+
+
+async function showNumOfDesks() {
+  const numOfDesks = await getNumOfDesks();
+
+  if (numOfDesks !== 0) {
+    elDeskImg.style.display = 'inline';
+    elNumOfDesks.textContent = ' x ' + numOfDesks;
+  }
+}
+
+
 
 function showCompletedMsg(username, walkCount) {
   completedMsg.innerText = `${username} ${walkCount}걸음 입력 완료!`;
@@ -164,6 +204,18 @@ async function getTotalWalkCount() {
     })
     .catch(() => 0);
   return latestWalkLog;
+}
+
+// 책상 갯수 가져오기
+async function getNumOfDesks() {
+  const chartInfo = await db
+    .collection(COL_ADMIN)
+    .doc(DOC_CHART)
+    .get()
+    .then(doc => {
+      return doc.data();
+    })
+  return chartInfo.numOfDesks;
 }
 
 async function getWalkLogs() {

@@ -78,6 +78,22 @@ a:visited {
   margin: 0.2em 0;
 }
 
+.chart__desk {
+  margin-top: 50px;
+  align-items: center;
+  position: absolute;
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#chart__deskImg {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  display: none;
+}
+
 .chart__process {
   margin: 0 auto;
   width: 340px;
