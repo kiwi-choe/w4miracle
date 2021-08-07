@@ -7,6 +7,7 @@ const totalWalkCnt = document.querySelector(".chart__value");
 const elNumOfDesks = document.querySelector(".chart__numOfDesks");
 const elDeskImg = document.querySelector("#chart__deskImg");
 const userTable = document.querySelector("#users");
+const elBoard = document.querySelector("#board");
 
 const seeMoreBtn = document.querySelector("#seeMore");
 
@@ -84,8 +85,7 @@ function showDeskAnimation() {
 async function onSubmit(info) {
   info.preventDefault();
 
-  // todo [banny] 조건 수정 필요.
-  showDeskAnimation();
+ 
 
   if (!validateInputData(username.value, phoneNumber.value, walkCount.value)) {
     alert("이름, 번호, 걸음수 입력해주세요!");
@@ -102,7 +102,10 @@ async function onSubmit(info) {
     return;
   }
 
+  
+
   try {
+    showDeskAnimation();
     const existUserWalks = await userExist(username.value, phoneNumber.value);
     if (existUserWalks) {
       await updateUser(
@@ -164,7 +167,6 @@ function showCompletedMsg(username, walkCount) {
 
 function hideSeeMoreButton() {
   seeMoreBtn.style.setProperty("display", "none");
-  console.log("hideSeeMoreButton");
 }
 function showSeeMoreButton() {
   seeMoreBtn.style.setProperty("display", "block");
@@ -226,17 +228,21 @@ async function getWalkLogs() {
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-        const walkCount = Number(doc.data().walkCount).toLocaleString();
-        const totalWalkCount = Number(
-          doc.data().totalWalkCount
-        ).toLocaleString();
+        if (doc.length !== 0) {
+          elBoard.style.display = 'block';
+          const walkCount = Number(doc.data().walkCount).toLocaleString();
+          const totalWalkCount = Number(
+            doc.data().totalWalkCount
+          ).toLocaleString();
+  
+          addWalkLogTable(
+            doc.data().username,
+            doc.data().phoneNumber,
+            walkCount,
+            totalWalkCount
+          );
+        }
 
-        addWalkLogTable(
-          doc.data().username,
-          doc.data().phoneNumber,
-          walkCount,
-          totalWalkCount
-        );
       });
       // check if last item
       if (snapshot.docs.length < GET_WALKLOG_LIMIT_COUNT) {

@@ -170,6 +170,7 @@ input[type="text"]::placeholder {
 }
 
 #board {
+  display: none;
 }
 
 #board table {
