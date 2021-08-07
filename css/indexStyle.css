@@ -2,18 +2,26 @@
 font-family: 'Poppins', sans-serif; */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@media screen and (min-width:200px) and (max-width:330px) {
-  html { font-size: 50%; }
+@media screen and (min-width: 200px) and (max-width: 330px) {
+  html {
+    font-size: 50%;
+  }
 }
-@media screen and (min-width:331px) and (max-width:380px) {
-  html { font-size: 55%; }
-} 
-@media screen and (min-width:381px) and (max-width: 740px) {
-  html { font-size: 65%; }
+@media screen and (min-width: 331px) and (max-width: 380px) {
+  html {
+    font-size: 55%;
+  }
 }
-@media (min-width:741px) { 
-  html { font-size: 80%; }
- }
+@media screen and (min-width: 381px) and (max-width: 740px) {
+  html {
+    font-size: 65%;
+  }
+}
+@media (min-width: 741px) {
+  html {
+    font-size: 80%;
+  }
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -22,7 +30,7 @@ body {
 }
 
 section {
-  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 section:last-child {
@@ -32,11 +40,19 @@ section:last-child {
 p {
   font-size: 1.9rem;
   line-height: 1.6em;
-  margin-bottom: 40px;
+  margin-top: 40px;
   text-align: center;
   word-break: keep-all;
 }
+.title_space {
+  margin-top: 20px !important;
+}
 
+.how_to_offering {
+  /* text-align: start; */
+  font-size: 1.6rem;
+  /* padding-left: 10%; */
+}
 a:visited {
   text-decoration: none;
 }
@@ -53,7 +69,7 @@ a:visited {
   max-width: 440px;
   /* max-width: 600px; */
   margin: 0 auto;
-  padding: 30px;
+  padding: 0 30px;
 }
 
 /* HEADER */
@@ -61,7 +77,6 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 22px 0;
 }
 
 .header__logo {
@@ -70,9 +85,6 @@ a:visited {
   margin: 70px 0 20px 0;
 }
 
-#mid {
-  text-align: center;
-}
 .comming_soon_text {
   color: #d77900;
   font-size: 4rem;
@@ -86,12 +98,13 @@ a:visited {
 
 .btn__wrap {
   margin: 75px 0;
+  text-align: center;
 }
 
 .btn__participate {
   font-size: 2.2rem;
   color: #ededed;
-  padding: 10px 30px;
+  padding: 16px 30px;
   background-color: #d77900;
   border-radius: 12px;
   text-decoration: none;
@@ -122,6 +135,7 @@ a:visited {
 /* FOOTER */
 #footer {
   text-align: center;
+  margin-top: 20px;
 }
 
 .footer__logo {
