@@ -101,7 +101,6 @@ async function onSubmit(info) {
   }
 
   try {
-    showDeskAnimation();
     const existUserWalks = await userExist(username.value, phoneNumber.value);
     if (existUserWalks) {
       await updateUser(
@@ -343,6 +342,7 @@ async function addWalkLog(username, number, latestTotalWalkCount, walkCount) {
       createdAt: today.toISOString(),
     })
     .then(() => {
+      showDeskAnimation();
       initView();
     });
 }
