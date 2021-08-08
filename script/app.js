@@ -19,8 +19,8 @@ const COL_ADMIN = "admin";
 const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
 
-const DOC_CHART = 'chart';
-const DOC_URLS = 'urls';
+const DOC_CHART = "chart";
+const DOC_URLS = "urls";
 
 const GET_WALKLOG_LIMIT_COUNT = 5;
 let lastVisible = -1;
@@ -85,8 +85,6 @@ function showDeskAnimation() {
 async function onSubmit(info) {
   info.preventDefault();
 
- 
-
   if (!validateInputData(username.value, phoneNumber.value, walkCount.value)) {
     alert("이름, 번호, 걸음수 입력해주세요!");
     return;
@@ -101,8 +99,6 @@ async function onSubmit(info) {
     alert("핸드폰 번호는 숫자로 입력해주세요");
     return;
   }
-
-  
 
   try {
     showDeskAnimation();
@@ -129,13 +125,11 @@ async function onSubmit(info) {
 
     await updateNumOfDesks(latestTotalWalkCount, walkCount.value);
     showNumOfDesks();
-
   } catch (e) {
     console.log(e);
   }
 }
 walkCountInputForm.addEventListener("submit", onSubmit);
-
 
 async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
   const numOfDesks = (latestTotalWalkCount + Number(walkCount)) / 50000;
@@ -144,21 +138,18 @@ async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
     .collection(COL_ADMIN)
     .doc(DOC_CHART)
     .update({
-      numOfDesks: Math.floor(numOfDesks)
-    })
+      numOfDesks: Math.floor(numOfDesks),
+    });
 }
-
 
 async function showNumOfDesks() {
   const numOfDesks = await getNumOfDesks();
 
   if (numOfDesks !== 0) {
-    elDeskImg.style.display = 'inline';
-    elNumOfDesks.textContent = ' x ' + numOfDesks;
+    elDeskImg.style.display = "inline";
+    elNumOfDesks.textContent = " x " + numOfDesks;
   }
 }
-
-
 
 function showCompletedMsg(username, walkCount) {
   completedMsg.innerText = `${username} ${walkCount}걸음 입력 완료!`;
@@ -173,7 +164,9 @@ function showSeeMoreButton() {
 }
 
 function validateInputData(username, phoneNumber, walkCount) {
-  return username !== "" && phoneNumber !== "" && walkCount !== "";
+  return (
+    username !== "" && phoneNumber !== "" && walkCount !== "" && walkCount > 0
+  );
 }
 
 // 더보기
@@ -214,9 +207,9 @@ async function getNumOfDesks() {
     .collection(COL_ADMIN)
     .doc(DOC_CHART)
     .get()
-    .then(doc => {
+    .then((doc) => {
       return doc.data();
-    })
+    });
   return chartInfo.numOfDesks;
 }
 
@@ -229,12 +222,12 @@ async function getWalkLogs() {
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
         if (doc.length !== 0) {
-          elBoard.style.display = 'block';
+          elBoard.style.display = "block";
           const walkCount = Number(doc.data().walkCount).toLocaleString();
           const totalWalkCount = Number(
             doc.data().totalWalkCount
           ).toLocaleString();
-  
+
           addWalkLogTable(
             doc.data().username,
             doc.data().phoneNumber,
@@ -242,7 +235,6 @@ async function getWalkLogs() {
             totalWalkCount
           );
         }
-
       });
       // check if last item
       if (snapshot.docs.length < GET_WALKLOG_LIMIT_COUNT) {
