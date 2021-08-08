@@ -241,7 +241,7 @@ async function getWalkLogs() {
         return;
       }
       lastVisible = snapshot.docs[snapshot.docs.length - 1];
-      console.log("last", lastVisible);
+      // console.log("last", lastVisible);
     });
 }
 
@@ -272,7 +272,7 @@ async function getNextWalkLogs() {
         return;
       }
       lastVisible = snapshot.docs[snapshot.docs.length - 1];
-      console.log("last", lastVisible);
+      // console.log("last", lastVisible);
     });
 }
 
