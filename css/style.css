@@ -190,7 +190,7 @@ th,td {
 }
 
 #board table tr {
-  font-size: 15px;
+  font-size: 18px;
   height: 2.4em;
   line-height: 2.4em;
   text-align: center;
@@ -276,15 +276,19 @@ th,td {
   }
 
   input[type="text"] {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   #board table tr {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .seeMore {
     font-size: calc(12px + 1vw);
+  }
+
+  #footer {
+    font-size: 13px;
   }
 }
 
