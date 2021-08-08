@@ -69,7 +69,7 @@ a:visited {
 
 .chart__text {
   font-size: 20px;
-  margin: 10px 0;
+  margin: 4px 0;
 }
 
 .chart__value {
@@ -79,7 +79,7 @@ a:visited {
 }
 
 .chart__desk {
-  margin-top: 50px;
+  margin-top: 35px;
   align-items: center;
   position: absolute;
   top: 73%;
@@ -169,6 +169,18 @@ input[type="text"]::placeholder {
   font-weight: 600;
 }
 
+table {
+  table-layout: fixed;
+  word-break: keep-all;
+  vertical-align: middle;
+}
+
+th,td {
+  vertical-align: middle;
+  line-height: 1.5em;
+}
+
+
 #board {
   display: none;
 }
@@ -228,9 +240,22 @@ input[type="text"]::placeholder {
 }
 
 /* 반응형 - width <= 440 */
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 420px) {
   .inner {
     padding: 20px;
+  }
+
+  .chart__text {
+    font-size: 16px;
+  }
+
+  .chart__value {
+    font-size: 40px;
+  }
+
+  #chart__deskImg {
+    width: 30px;
+    height: 30px;
   }
 
   .chart__process {
@@ -240,6 +265,22 @@ input[type="text"]::placeholder {
 
   .btn {
     font-size: calc(12px + 1vw);
+  }
+
+  .section__title {
+    font-size: 15px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input[type="text"] {
+    font-size: 13px;
+  }
+
+  #board table tr {
+    font-size: 13px;
   }
 
   .seeMore {
