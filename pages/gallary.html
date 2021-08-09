@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/gallaryStyle.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-storage.js"></script>
+</head>
+
+
+<body>
+    <form id="uploadForm" action="">
+        <input class="uploadForm__file" type="file" accept="image/*">
+        <textarea class="uploadForm__text" cols="30" rows="10"></textarea>
+        <input class="uploadForm__submit" type="submit" value="업로드">
+    </form>
+
+    <div class="galleryList">
+    </div>
+    <script src="../script/upload.js"></script>
+</body>
+
+</html>
