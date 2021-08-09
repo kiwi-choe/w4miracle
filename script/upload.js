@@ -8,12 +8,12 @@ const elPrevImgWrap = document.querySelector('.prevImgWrap');
 // Initialize Firebase
 const firebaseConfig = {
 	apiKey: "AIzaSyCg-XnCKH6zScJY_04rXUf0Fmxbza_JnGU",
-  authDomain: "walking4miracle.firebaseapp.com",
-  projectId: "walking4miracle",
-  storageBucket: "walking4miracle.appspot.com",
-  messagingSenderId: "414251762442",
-  appId: "1:414251762442:web:242b6a090d8013a7d9f0f3",
-  measurementId: "G-X0KSZNYM6V",
+	authDomain: "walking4miracle.firebaseapp.com",
+	projectId: "walking4miracle",
+	storageBucket: "walking4miracle.appspot.com",
+	messagingSenderId: "414251762442",
+	appId: "1:414251762442:web:242b6a090d8013a7d9f0f3",
+	measurementId: "G-X0KSZNYM6V",
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -23,28 +23,33 @@ db.settings({
 	timestampsInSnapshots: true,
 });
 
-
-const COL_GALLERIES = 'galleries';
-
-
+const COL_PHOTOS = 'photos';
 
 function init() {
-	selectGalleries();
+	selectPhotos();
 }
 init();
 
 // preview
 elFile.addEventListener('change', (event) => {
 	event.preventDefault();
-	const { target: { files } } = event;
+	const {
+		target: {
+			files
+		}
+	} = event;
 	const theFile = files[0];
 	const reader = new FileReader();
 	elPrevImgWrap.textContent = '';
-	
+
 	reader.onloadend = (finishedEvent) => {
-		const { currentTarget: { result } } = finishedEvent;
+		const {
+			currentTarget: {
+				result
+			}
+		} = finishedEvent;
 		let previewImg = document.createElement('img');
-		
+
 		previewImg.style.width = '100px';
 		previewImg.style.height = '100px';
 		previewImg.setAttribute('src', result);
@@ -52,7 +57,6 @@ elFile.addEventListener('change', (event) => {
 	}
 	reader.readAsDataURL(theFile);
 })
-
 
 // submit
 form.addEventListener('submit', onSubmit)
@@ -62,12 +66,12 @@ async function onSubmit(event) {
 	const theFile = document.querySelector('.uploadForm__file').files[0];
 
 	try {
-		if(!validCheck(theFile, elMessage.value)) return;
+		if (!validCheck(theFile, elMessage.value)) return;
 
 		const fileURL = await getFileURL(theFile);
 		const posting = getPosting(fileURL, elMessage.value);
 
-		addGalleries(posting);
+		addPhotos(posting);
 		initView();
 		prependGallery(posting);
 
@@ -76,28 +80,25 @@ async function onSubmit(event) {
 	}
 }
 
-
-
-
-async function selectGalleries() {
-	const galleries = await getGalleries();
-	viewGalleries(galleries)
+async function selectPhotos() {
+	const photos = await getPhotos();
+	viewPhotos(photos)
 }
 
-async function getGalleries() {
-	const galleries = await db
-		.collection(COL_GALLERIES)
+async function getPhotos() {
+	const photos = await db
+		.collection(COL_PHOTOS)
 		.orderBy("createdAt", "desc")
 		.get()
 		.then(snapshot => {
 			return snapshot.docs.map((doc) => doc.data());
 		})
-	return galleries;
+	return photos;
 }
 
-function viewGalleries(galleries) {
-	if (galleries.length !== 0) {
-		galleries.map(gallery => {
+function viewPhotos(photos) {
+	if (photos.length !== 0) {
+		photos.map(gallery => {
 			const elLi = document.createElement('li');
 			const elImg = document.createElement('img');
 			const elSpan = document.createElement('span');
@@ -143,9 +144,9 @@ function getPosting(fileURL, message) {
 	}
 }
 
-async function addGalleries(post) {
+async function addPhotos(post) {
 	await db
-		.collection(COL_GALLERIES)
+		.collection(COL_PHOTOS)
 		.add(post)
 }
 
