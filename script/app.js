@@ -6,6 +6,9 @@ const walkCount = walkCountInputForm.querySelector("#walkCount");
 const totalWalkCnt = document.querySelector(".chart__value");
 const elNumOfDesks = document.querySelector(".chart__numOfDesks");
 const elDeskImg = document.querySelector("#chart__deskImg");
+
+const thumbnailContainer = document.querySelector('#thumbnail__container');
+
 const userTable = document.querySelector("#users");
 const elBoard = document.querySelector("#board");
 
@@ -364,3 +367,12 @@ async function userExist(username, phoneNumber) {
     .catch(() => false);
   return userWalk;
 }
+
+thumbnailContainer.addEventListener('click', () => {
+  // window.location('../pages/gallary.html')
+})
+
+function onClickThumbnailSection() {
+  window.location.href = "../pages/gallary.html";
+}
+thumbnailContainer.addEventListener("click", onClickThumbnailSection);
