@@ -4,7 +4,7 @@ font-family: 'Poppins', sans-serif; */
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f0f0f0;
+  background-color: #efefef;
 }
 
 section {
@@ -107,11 +107,17 @@ a:visited {
   border-radius: 50%;
 }
 
-.process__thumb {
+#thumbnail__container {
+  margin-bottom: 10px !important;
+}
+
+.aa {
+  width: 100%;
+  height: 85px;
 }
 
 #form {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 #wrap_desk {
