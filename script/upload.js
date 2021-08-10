@@ -64,7 +64,7 @@ async function onSubmit(event) {
 
   try {
     initView();
-    
+
     if (!validatePhoto(photo)) return;
 
     const photoUrl = await getFileURL(photo);
@@ -86,7 +86,7 @@ async function selectPhotos() {
 async function getPhotos() {
   const photos = await db
     .collection(COL_PHOTOS)
-    .orderBy("createdAt", "desc")
+    .orderBy("createdAt", "asc")
     .get()
     .then((snapshot) => {
       return snapshot.docs.map((doc) => doc.data());
@@ -133,8 +133,6 @@ function addPhoto(post) {
 
 function initView() {
   elFile.value = "";
-  // elMessage.value = "";
-  // elPrevImgWrap.textContent = "";
 }
 
 function prependGallery(posting) {
@@ -143,10 +141,6 @@ function prependGallery(posting) {
 
   elImg.setAttribute("src", posting.fileURL);
   elDiv.setAttribute("class", "item");
-  //   elImg.style.width = "100px";
-  //   elImg.style.height = "100px";
-  //   elSpan.textContent = posting.message;
-
   elDiv.append(elImg);
   elGalleryList.prepend(elDiv);
 }
