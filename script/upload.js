@@ -63,15 +63,15 @@ async function onSubmit(event) {
   const photo = document.querySelector(".uploadForm__file").files[0];
 
   try {
+    initView();
+    
     if (!validatePhoto(photo)) return;
 
     const photoUrl = await getFileURL(photo);
     const posting = getPosting(photoUrl);
 
     addPhoto(posting);
-    initView();
     prependGallery(posting);
-    // 사진 비워지게
 
   } catch (e) {
     throw e;
@@ -127,8 +127,8 @@ function getPosting(fileURL) {
   };
 }
 
-async function addPhoto(post) {
-  await db.collection(COL_PHOTOS).add(post);
+function addPhoto(post) {
+  db.collection(COL_PHOTOS).add(post);
 }
 
 function initView() {
