@@ -2,8 +2,6 @@ const body = document.querySelector("body");
 const elGalleryList = document.querySelector(".galleryList");
 const form = document.querySelector("#uploadForm");
 const elFile = document.querySelector(".uploadForm__file");
-const elMessage = document.querySelector(".uploadForm__text");
-// const elPrevImgWrap = document.querySelector('.prevImgWrap');
 const headerLogoSection = document.querySelector("#header");
 
 // [START] Initialize Firebase

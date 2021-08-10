@@ -8,10 +8,9 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #efefef;
   margin: 0 auto;
-  background: #efefef;
-  /* background: black; */
 }
 
 /* input[type='file'] {
@@ -36,12 +35,23 @@ body {
   font-weight: 700;
 }
 
+/* #uploadForm {
+  margin-top: 1rem;
+} */
+.uploadForm__wrapper {
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .uploadForm__submit {
   font-size: 15px;
   color: #ededed;
-  padding: 12px 12px;
+  margin-top: 0.6rem;
+  padding: 12px 24px 12px 24px;
   background-color: #d77900;
-  border-radius: 12px;
+  border-radius: 4px;
   text-decoration: none;
 }
 
