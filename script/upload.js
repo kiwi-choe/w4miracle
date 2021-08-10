@@ -27,7 +27,6 @@ const COL_PHOTOS = "photos";
 // Initialize Firebase [END]
 
 function init() {
-  console.log("init");
   selectPhotos();
 }
 init();
@@ -72,6 +71,8 @@ async function onSubmit(event) {
     addPhoto(posting);
     // initView();
     prependGallery(posting);
+    // 사진 비워지게
+    
   } catch (e) {
     throw e;
   }
@@ -123,7 +124,6 @@ function getPosting(fileURL) {
   return {
     createdAt: today,
     fileURL: fileURL,
-    // message: message,
   };
 }
 
