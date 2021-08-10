@@ -4,6 +4,7 @@ const form = document.querySelector("#uploadForm");
 const elFile = document.querySelector(".uploadForm__file");
 const elMessage = document.querySelector(".uploadForm__text");
 // const elPrevImgWrap = document.querySelector('.prevImgWrap');
+const headerLogoSection = document.querySelector("#header");
 
 // [START] Initialize Firebase
 const firebaseConfig = {
@@ -31,29 +32,10 @@ function init() {
 }
 init();
 
-// preview
-// elFile.addEventListener("change", (event) => {
-//   event.preventDefault();
-//   const {
-//     target: { files },
-//   } = event;
-//   const theFile = files[0];
-//   const reader = new FileReader();
-//   elPrevImgWrap.textContent = "";
-
-//   reader.onloadend = (finishedEvent) => {
-//     const {
-//       currentTarget: { result },
-//     } = finishedEvent;
-//     let previewImg = document.createElement("img");
-
-//     previewImg.style.width = "100px";
-//     previewImg.style.height = "100px";
-//     previewImg.setAttribute("src", result);
-//     elPrevImgWrap.appendChild(previewImg);
-//   };
-//   reader.readAsDataURL(theFile);
-// });
+function onClickHeaderLogo() {
+  window.location.href = "../index.html";
+}
+headerLogoSection.addEventListener("click", onClickHeaderLogo);
 
 // submit
 form.addEventListener("submit", onSubmit);
@@ -72,7 +54,6 @@ async function onSubmit(event) {
 
     addPhoto(posting);
     prependGallery(posting);
-
   } catch (e) {
     throw e;
   }

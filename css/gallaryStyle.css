@@ -17,6 +17,24 @@ body {
 /* input[type='file'] {
   color: transparent;
 } */
+/* HEADER */
+#header {
+  background-color: #6bc4e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0 25px 0;
+}
+
+.header__logo {
+  width: 260px;
+}
+
+.header__logo strong {
+  display: block;
+  font-size: 1.1em;
+  font-weight: 700;
+}
 
 .uploadForm__submit {
   font-size: 15px;
@@ -43,7 +61,7 @@ body {
   font-weight: bold;
 }
 
-.upload-btn-wrapper input[type=file] {
+.upload-btn-wrapper input[type="file"] {
   font-size: 100px;
   position: absolute;
   left: 0;
