@@ -2,42 +2,23 @@ const walkCountInputForm = document.getElementById("walkCount-form");
 const username = walkCountInputForm.querySelector("#username");
 const phoneNumber = walkCountInputForm.querySelector("#phoneNumber");
 const walkCount = walkCountInputForm.querySelector("#walkCount");
-
 const totalWalkCnt = document.querySelector(".chart__value");
 const elNumOfDesks = document.querySelector(".chart__numOfDesks");
 const elDeskImg = document.querySelector("#chart__deskImg");
-
 const thumbnailContainer = document.querySelector('#thumbnail__container');
-
 const userTable = document.querySelector("#users");
 const elBoard = document.querySelector("#board");
-
 const seeMoreBtn = document.querySelector("#seeMore");
-
 const headerLogoSection = document.querySelector("#header");
-
 const deskAnimImage = document.querySelector(".img_desk_anmation");
 
 const COL_ADMIN = "admin";
 const COL_USERS = "users";
 const COL_WALKLOG = "walkLog";
-
 const DOC_CHART = "chart";
 const DOC_URLS = "urls";
-
 const GET_WALKLOG_LIMIT_COUNT = 5;
 let lastVisible = -1;
-
-function clearInput() {
-  username.value = "";
-  phoneNumber.value = "";
-  walkCount.value = "";
-}
-
-function onClickHeaderLogo() {
-  window.location.href = "../index.html";
-}
-headerLogoSection.addEventListener("click", onClickHeaderLogo);
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -49,12 +30,23 @@ const firebaseConfig = {
   appId: "1:414251762442:web:242b6a090d8013a7d9f0f3",
   measurementId: "G-X0KSZNYM6V",
 };
-
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 db.settings({
   timestampsInSnapshots: true,
 });
+// == Initialize Firebase
+
+function clearInput() {
+  username.value = "";
+  phoneNumber.value = "";
+  walkCount.value = "";
+}
+
+function onClickHeaderLogo() {
+  window.location.href = "../index.html";
+}
+headerLogoSection.addEventListener("click", onClickHeaderLogo);
 
 // GET 총 걸음 수
 function selectTotalWalkCount() {
@@ -171,8 +163,27 @@ function validateInputData(username, phoneNumber, walkCount) {
   );
 }
 
+// 더보기 더블 클릭 방지
+let seeMoreFlag = false;
+function isDoubleClicked() {
+  if (seeMoreFlag === true) {
+    return seeMoreFlag;
+  } else {
+    seeMoreFlag = true;
+    return false;
+  }
+}
+function clickInit() {
+  seeMoreFlag = false;
+}
+
 // 더보기
 function onClickSeeMore() {
+  if (isDoubleClicked() === true) {
+    // alert('2번 클릭');
+    return;
+  }
+  
   getNextWalkLogs();
 }
 seeMoreBtn.addEventListener("click", onClickSeeMore);
@@ -275,7 +286,7 @@ async function getNextWalkLogs() {
         return;
       }
       lastVisible = snapshot.docs[snapshot.docs.length - 1];
-      // console.log("last", lastVisible);
+      clickInit(); // 다음 워크로그 조회 후에 seeMoreFlag를 다시 false로 초기회
     });
 }
 
