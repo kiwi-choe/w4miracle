@@ -69,10 +69,10 @@ async function onSubmit(event) {
     const posting = getPosting(photoUrl);
 
     addPhoto(posting);
-    // initView();
+    initView();
     prependGallery(posting);
     // 사진 비워지게
-    
+
   } catch (e) {
     throw e;
   }
@@ -131,10 +131,11 @@ async function addPhoto(post) {
   await db.collection(COL_PHOTOS).add(post);
 }
 
-// function initView() {
-//   elMessage.value = "";
-//   elPrevImgWrap.textContent = "";
-// }
+function initView() {
+  elFile.value = "";
+  // elMessage.value = "";
+  // elPrevImgWrap.textContent = "";
+}
 
 function prependGallery(posting) {
   const elDiv = document.createElement("div");
