@@ -3,6 +3,7 @@ const elGalleryList = document.querySelector(".galleryList");
 const form = document.querySelector("#uploadForm");
 const elFile = document.querySelector(".uploadForm__file");
 const headerLogoSection = document.querySelector("#_header");
+const loadingView = document.querySelector(".spinner_container");
 
 // [START] Initialize Firebase
 const firebaseConfig = {
@@ -27,33 +28,51 @@ const COL_PHOTOS = "photos";
 
 function init() {
   selectPhotos();
+  initView();
 }
 init();
 
+function initView() {
+  showLoading(false);
+}
 function onClickHeaderLogo() {
   window.location.href = "../index.html";
 }
 headerLogoSection.addEventListener("click", onClickHeaderLogo);
 
-// submit
-form.addEventListener("submit", onSubmit);
-
 async function onSubmit(event) {
   event.preventDefault();
+
   const photo = document.querySelector(".uploadForm__file").files[0];
 
   try {
-    initView();
+    clearSelectedFile();
 
-    if (!validatePhoto(photo)) return;
+    if (!validatePhoto(photo)) {
+      return;
+    }
+
+    showLoading(true);
 
     const photoUrl = await getFileURL(photo);
     const posting = getPosting(photoUrl);
 
-    addPhoto(posting);
+    savePhotoToDB(posting);
+    showLoading(false);
+
     prependGallery(posting);
   } catch (e) {
     throw e;
+  }
+}
+// submit
+form.addEventListener("submit", onSubmit);
+
+function showLoading(visible) {
+  if (visible) {
+    loadingView.style.setProperty("display", "flex");
+  } else {
+    loadingView.style.setProperty("display", "none");
   }
 }
 
@@ -106,11 +125,11 @@ function getPosting(fileURL) {
   };
 }
 
-function addPhoto(post) {
+function savePhotoToDB(post) {
   db.collection(COL_PHOTOS).add(post);
 }
 
-function initView() {
+function clearSelectedFile() {
   elFile.value = "";
 }
 

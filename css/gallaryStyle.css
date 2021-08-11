@@ -108,6 +108,11 @@ body {
   /* border-radius: 15%; */
 }
 
+.spinner_container {
+  display: flex;
+  justify-content: center;
+  color: darkgray;
+}
 @media only screen and (max-width: 320px) {
   .galleryList {
     -moz-column-count: 1;
