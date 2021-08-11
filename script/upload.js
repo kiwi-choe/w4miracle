@@ -32,14 +32,17 @@ const COL_PHOTOS = "photos";
 // Initialize Firebase [END]
 
 function init() {
-  selectPhotos();
   initView();
+  selectPhotos()
+    .then(() => {
+      showLoadPhotoLoadingView(false);
+    });
 }
 init();
 
 function initView() {
   showPostPhotoLoading(false);
-  showLoadPhotoLoadingView(false);
+  showLoadPhotoLoadingView(true);
 }
 function onClickHeaderLogo() {
   window.location.href = "../index.html";
@@ -93,6 +96,7 @@ function showLoadPhotoLoadingView(visible) {
 async function selectPhotos() {
   const photos = await getPhotos();
   viewPhotos(photos);
+  // showLoadPhotoLoadingView(false);
 }
 
 async function getPhotos() {
