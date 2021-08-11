@@ -109,12 +109,24 @@ body {
 }
 
 .load_photos_spinner_container {
-  display: flex;
-  justify-content: center;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: darkgray;
+
+  /* display: flex;
+  justify-content: center;
+  color: darkgray; */
 }
 
 .post_photos_spinner_container {
+  /* position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: darkgray; */
+
   display: flex;
   justify-content: center;
   color: darkgray;
