@@ -3,7 +3,12 @@ const elGalleryList = document.querySelector(".galleryList");
 const form = document.querySelector("#uploadForm");
 const elFile = document.querySelector(".uploadForm__file");
 const headerLogoSection = document.querySelector("#_header");
-const loadingView = document.querySelector(".spinner_container");
+const postPhotoLoadingView = document.querySelector(
+  ".post_photos_spinner_container"
+);
+const loadPhotoLoadingView = document.querySelector(
+  ".load_photos_spinner_container"
+);
 
 // [START] Initialize Firebase
 const firebaseConfig = {
@@ -33,7 +38,8 @@ function init() {
 init();
 
 function initView() {
-  showLoading(false);
+  showPostPhotoLoading(false);
+  showLoadPhotoLoadingView(false);
 }
 function onClickHeaderLogo() {
   window.location.href = "../index.html";
@@ -52,13 +58,13 @@ async function onSubmit(event) {
       return;
     }
 
-    showLoading(true);
+    showPostPhotoLoading(true);
 
     const photoUrl = await getFileURL(photo);
     const posting = getPosting(photoUrl);
 
     savePhotoToDB(posting);
-    showLoading(false);
+    showPostPhotoLoading(false);
 
     prependGallery(posting);
   } catch (e) {
@@ -68,11 +74,19 @@ async function onSubmit(event) {
 // submit
 form.addEventListener("submit", onSubmit);
 
-function showLoading(visible) {
+function showPostPhotoLoading(visible) {
   if (visible) {
-    loadingView.style.setProperty("display", "flex");
+    postPhotoLoadingView.style.setProperty("display", "flex");
   } else {
-    loadingView.style.setProperty("display", "none");
+    postPhotoLoadingView.style.setProperty("display", "none");
+  }
+}
+
+function showLoadPhotoLoadingView(visible) {
+  if (visible) {
+    loadPhotoLoadingView.style.setProperty("display", "flex");
+  } else {
+    loadPhotoLoadingView.style.setProperty("display", "none");
   }
 }
 

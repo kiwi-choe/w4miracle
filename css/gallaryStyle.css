@@ -108,11 +108,19 @@ body {
   /* border-radius: 15%; */
 }
 
-.spinner_container {
+.load_photos_spinner_container {
   display: flex;
   justify-content: center;
   color: darkgray;
 }
+
+.post_photos_spinner_container {
+  display: flex;
+  justify-content: center;
+  color: darkgray;
+  margin-bottom: 2rem;
+}
+
 @media only screen and (max-width: 320px) {
   .galleryList {
     -moz-column-count: 1;
