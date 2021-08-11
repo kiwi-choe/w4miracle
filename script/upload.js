@@ -2,7 +2,7 @@ const body = document.querySelector("body");
 const elGalleryList = document.querySelector(".galleryList");
 const form = document.querySelector("#uploadForm");
 const elFile = document.querySelector(".uploadForm__file");
-const headerLogoSection = document.querySelector("#header");
+const headerLogoSection = document.querySelector("#_header");
 
 // [START] Initialize Firebase
 const firebaseConfig = {
