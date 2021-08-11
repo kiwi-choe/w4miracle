@@ -17,7 +17,7 @@ body {
   color: transparent;
 } */
 /* HEADER */
-#header {
+#_header {
   background-color: #6bc4e8;
   display: flex;
   justify-content: center;
@@ -25,11 +25,11 @@ body {
   padding: 90px 0 25px 0;
 }
 
-.header__logo {
+._header__logo {
   width: 260px;
 }
 
-.header__logo strong {
+._header__logo strong {
   display: block;
   font-size: 1.1em;
   font-weight: 700;
