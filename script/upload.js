@@ -94,16 +94,14 @@ function showLoadPhotoLoadingView(visible) {
 }
 
 async function selectPhotos() {
-  if (!isPhotosInLocalStorage()) {
-    const photos = await getPhotosFromDB(); // 조회
-    addToLocalStorage(photos);
-    viewPhotos(photos);
+  let photos;
+  if (isPhotosInLocalStorage()) {
+    photos = getPhotosFromLocalStorage();
   } else {
-    const photos = getPhotosFromLocalStorage();
-    viewPhotos(photos);
+    photos = await getPhotosFromDB(); // 조회
+    addToLocalStorage(photos);
   }
-
-  // showLoadPhotoLoadingView(false);
+  showPhotos(photos);
 }
 
 function getPhotosFromLocalStorage() {
@@ -130,7 +128,7 @@ async function getPhotosFromDB() {
   return photos;
 }
 
-function viewPhotos(photos) {
+function showPhotos(photos) {
   if (photos.length !== 0) {
     photos.map((photo) => {
       prependGallery(photo);
