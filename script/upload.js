@@ -94,12 +94,32 @@ function showLoadPhotoLoadingView(visible) {
 }
 
 async function selectPhotos() {
-  const photos = await getPhotos();
-  viewPhotos(photos);
+  if (!isPhotosInLocalStorage()) {
+    const photos = await getPhotosFromDB(); // 조회
+    addToLocalStorage(photos);
+    viewPhotos(photos);
+  } else {
+    const photos = getPhotosFromLocalStorage();
+    viewPhotos(photos);
+  }
+
   // showLoadPhotoLoadingView(false);
 }
 
-async function getPhotos() {
+function getPhotosFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("photos"));
+}
+
+function isPhotosInLocalStorage() {
+  return localStorage.getItem("photos")
+}
+
+function addToLocalStorage(photos) {
+  localStorage.setItem("photos", JSON.stringify(photos))
+}
+
+async function getPhotosFromDB() {
+  console.log('db 조회')
   const photos = await db
     .collection(COL_PHOTOS)
     .orderBy("createdAt", "asc")
