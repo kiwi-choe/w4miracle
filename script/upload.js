@@ -94,12 +94,30 @@ function showLoadPhotoLoadingView(visible) {
 }
 
 async function selectPhotos() {
-  const photos = await getPhotos();
-  viewPhotos(photos);
-  // showLoadPhotoLoadingView(false);
+  let photos;
+  if (isPhotosInLocalStorage()) {
+    photos = getPhotosFromLocalStorage();
+  } else {
+    photos = await getPhotosFromDB(); // 조회
+    addToLocalStorage(photos);
+  }
+  showPhotos(photos);
 }
 
-async function getPhotos() {
+function getPhotosFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("photos"));
+}
+
+function isPhotosInLocalStorage() {
+  return localStorage.getItem("photos")
+}
+
+function addToLocalStorage(photos) {
+  localStorage.setItem("photos", JSON.stringify(photos))
+}
+
+async function getPhotosFromDB() {
+  console.log('db 조회')
   const photos = await db
     .collection(COL_PHOTOS)
     .orderBy("createdAt", "asc")
@@ -110,7 +128,7 @@ async function getPhotos() {
   return photos;
 }
 
-function viewPhotos(photos) {
+function showPhotos(photos) {
   if (photos.length !== 0) {
     photos.map((photo) => {
       prependGallery(photo);
