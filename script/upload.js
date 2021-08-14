@@ -66,7 +66,7 @@ async function onSubmit(event) {
     const photoUrl = await getFileURL(photo);
     const posting = getPosting(photoUrl);
 
-    savePhotoToDB(posting);
+    await savePhotoToDB(posting);
     showPostPhotoLoading(false);
 
     prependGallery(posting);
@@ -95,12 +95,12 @@ function showLoadPhotoLoadingView(visible) {
 
 async function selectPhotos() {
   let photos;
-  if (isPhotosInLocalStorage()) {
-    photos = getPhotosFromLocalStorage();
-  } else {
+  // if (isPhotosInLocalStorage()) {
+  //   photos = getPhotosFromLocalStorage();
+  // } else {
     photos = await getPhotosFromDB(); // 조회
-    addToLocalStorage(photos);
-  }
+  //   addToLocalStorage(photos);
+  // }
   showPhotos(photos);
 }
 
@@ -161,8 +161,8 @@ function getPosting(fileURL) {
   };
 }
 
-function savePhotoToDB(post) {
-  db.collection(COL_PHOTOS).add(post);
+async function savePhotoToDB(post) {
+  awaitdb.collection(COL_PHOTOS).add(post);
 }
 
 function clearSelectedFile() {
