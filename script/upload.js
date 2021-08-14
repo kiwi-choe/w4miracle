@@ -54,6 +54,8 @@ async function onSubmit(event) {
 
   const photo = document.querySelector(".uploadForm__file").files[0];
 
+  console.log(photo)
+
   try {
     clearSelectedFile();
 
@@ -162,7 +164,7 @@ function getPosting(fileURL) {
 }
 
 async function savePhotoToDB(post) {
-  awaitdb.collection(COL_PHOTOS).add(post);
+  await db.collection(COL_PHOTOS).add(post);
 }
 
 function clearSelectedFile() {
