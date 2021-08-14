@@ -44,6 +44,7 @@ function initView() {
   showPostPhotoLoading(false);
   showLoadPhotoLoadingView(true);
 }
+
 function onClickHeaderLogo() {
   window.location.href = "../index.html";
 }
@@ -54,27 +55,26 @@ async function onSubmit(event) {
 
   const photo = document.querySelector(".uploadForm__file").files[0];
 
-  console.log(photo)
+  // try {
+  clearSelectedFile();
 
-  try {
-    clearSelectedFile();
-
-    if (!validatePhoto(photo)) {
-      return;
-    }
-
-    showPostPhotoLoading(true);
-
-    const photoUrl = await getFileURL(photo);
-    const posting = getPosting(photoUrl);
-
-    await savePhotoToDB(posting);
-    showPostPhotoLoading(false);
-
-    prependGallery(posting);
-  } catch (e) {
-    throw e;
+  if (!validatePhoto(photo)) {
+    return;
   }
+
+  showPostPhotoLoading(true);
+
+  const response = await savePhotoToStorage(photo);
+  const photoUrl = await getPhotoURL(response);
+  const posting = convertToPosting(photoUrl);
+
+  await savePhotoToDB(posting);
+  showPostPhotoLoading(false);
+
+  prependGallery(posting);
+  // } catch (e) {
+  //   throw e;
+  // }
 }
 // submit
 form.addEventListener("submit", onSubmit);
@@ -100,7 +100,7 @@ async function selectPhotos() {
   // if (isPhotosInLocalStorage()) {
   //   photos = getPhotosFromLocalStorage();
   // } else {
-    photos = await getPhotosFromDB(); // 조회
+  photos = await getPhotosFromDB(); // 조회
   //   addToLocalStorage(photos);
   // }
   showPhotos(photos);
@@ -146,16 +146,20 @@ function validatePhoto(theFile) {
   return true;
 }
 
-async function getFileURL(theFile) {
-  const today = new Date().toISOString();
-  const storageRef = storage.ref();
-  const path = storageRef.child(`image/${today}`);
-  const response = await path.put(theFile);
-  const fileURL = await response.ref.getDownloadURL();
+async function getPhotoURL(response) {
+  const fileURL = await response.ref.getDownloadURL(); // 파일 url 가져오기
   return fileURL;
 }
 
-function getPosting(fileURL) {
+async function savePhotoToStorage(photo) {
+  const today = new Date().toISOString();
+  const storageRef = storage.ref();
+  const path = storageRef.child(`image/${today}`);
+  const response = await path.put(photo); // storage에 저장
+  return response;
+}
+
+function convertToPosting(fileURL) {
   const today = new Date().toISOString();
   return {
     createdAt: today,
