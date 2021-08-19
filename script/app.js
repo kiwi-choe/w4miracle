@@ -159,7 +159,6 @@ function showSeeMoreButton() {
 
 function validateInputData(username, phoneNumber, walkCount) {
   return (
-    // username !== "" && phoneNumber !== "" && walkCount !== "" && walkCount > 0
     username && phoneNumber && walkCount && walkCount > 0
   );
 }
@@ -181,7 +180,6 @@ function clickInit() {
 // 더보기
 function onClickSeeMore() {
   if (isDoubleClicked() === true) {
-    // alert('2번 클릭');
     return;
   }
   
@@ -256,7 +254,6 @@ async function getWalkLogs() {
         return;
       }
       lastVisible = snapshot.docs[snapshot.docs.length - 1];
-      // console.log("last", lastVisible);
     });
 }
 
