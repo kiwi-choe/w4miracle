@@ -158,7 +158,7 @@ function showSeeMoreButton() {
 }
 
 function validateInputData(username, phoneNumber, walkCount) {
-  return (
+  return ( 
     !username && !phoneNumber && !walkCount && walkCount > 0
   );
 }
