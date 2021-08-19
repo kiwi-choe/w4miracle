@@ -158,8 +158,8 @@ function showSeeMoreButton() {
 }
 
 function validateInputData(username, phoneNumber, walkCount) {
-  return ( 
-    !username && !phoneNumber && !walkCount && walkCount > 0
+  return (
+    username !== "" && phoneNumber !== "" && walkCount !== "" && walkCount > 0
   );
 }
 
