@@ -159,7 +159,7 @@ function showSeeMoreButton() {
 
 function validateInputData(username, phoneNumber, walkCount) {
   return (
-    username && phoneNumber && walkCount && walkCount > 0
+    username && phoneNumber && walkCount && walkCount > 0 && String(phoneNumber).length === 4
   );
 }
 
