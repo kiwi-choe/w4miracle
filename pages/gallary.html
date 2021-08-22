@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/gallaryStyle.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-storage.js"></script>
+</head>
+
+
+<body>
+    <header id="_header">
+        <img class="_header__logo" src="../assets/imgs/w4m_white.png" alt="img_logo">
+    </header>
+
+    <form id="uploadForm" method="post" enctype="multipart/form-data">
+        <div class="uploadForm__wrapper">
+            <!-- todo [jiwon] 파일 여러개 올리기  -->
+            <!-- <input class="uploadForm__file" type="file" name="file" multiple accept="image/*"> -->
+            <input class="uploadForm__file" type="file" name="file" accept="image/*">
+            <input class="uploadForm__submit" type="submit" value="업로드">
+        </div>
+    </form>
+
+    <!-- loading photos from DB  -->
+    <div class="load_photos_spinner_container">
+        <i class="fas fa-spinner fa-10x fa-spin"></i>
+    </div>
+
+    <!-- loading to post photos  -->
+    <div class="post_photos_spinner_container">
+        <i class="fas fa-spinner fa-3x fa-spin"></i>
+    </div>
+
+    <div class="galleryList">
+    </div>
+    <script src="../script/upload.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</body>
+
+</html>
