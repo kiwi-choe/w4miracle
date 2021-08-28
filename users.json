@@ -1,0 +1,1145 @@
+{
+  "__collections__": {
+    "users": {
+      "SHINOKJOO-9175": {
+        "walks": [
+          { "createdAt": "2021-08-16T08:14:35.865Z", "walkCount": 52700 },
+          { "walkCount": 42700, "createdAt": "2021-08-22T05:36:47.052Z" }
+        ],
+        "username": "SHINOKJOO",
+        "phoneNumber": "9175",
+        "__collections__": {}
+      },
+      "강민정-6176": {
+        "phoneNumber": "6176",
+        "username": "강민정",
+        "walks": [
+          { "walkCount": 10507, "createdAt": "2021-08-17T11:30:44.320Z" }
+        ],
+        "__collections__": {}
+      },
+      "강예원 -5018": {
+        "phoneNumber": "5018",
+        "username": "강예원 ",
+        "walks": [
+          { "walkCount": 6153, "createdAt": "2021-08-28T04:41:05.910Z" }
+        ],
+        "__collections__": {}
+      },
+      "강예원-5018": {
+        "phoneNumber": "5018",
+        "walks": [
+          { "walkCount": 3987, "createdAt": "2021-08-14T13:23:22.611Z" },
+          { "createdAt": "2021-08-15T13:36:50.523Z", "walkCount": 4781 },
+          { "createdAt": "2021-08-16T02:10:44.785Z", "walkCount": 5916 },
+          { "createdAt": "2021-08-20T13:06:50.989Z", "walkCount": 6987 },
+          { "walkCount": 6280, "createdAt": "2021-08-22T09:17:39.429Z" },
+          { "walkCount": 7398, "createdAt": "2021-08-26T05:29:09.029Z" }
+        ],
+        "username": "강예원",
+        "__collections__": {}
+      },
+      "강예원-5019": {
+        "username": "강예원",
+        "phoneNumber": "5019",
+        "walks": [
+          { "walkCount": 6502, "createdAt": "2021-08-22T01:16:15.111Z" }
+        ],
+        "__collections__": {}
+      },
+      "권도현 -6642": {
+        "username": "권도현 ",
+        "phoneNumber": "6642",
+        "walks": [
+          { "createdAt": "2021-08-16T05:56:56.823Z", "walkCount": 6002 }
+        ],
+        "__collections__": {}
+      },
+      "권보미-0789": {
+        "phoneNumber": "0789",
+        "username": "권보미",
+        "walks": [
+          { "walkCount": 10000, "createdAt": "2021-08-21T07:54:35.115Z" }
+        ],
+        "__collections__": {}
+      },
+      "권상수-2007": {
+        "username": "권상수",
+        "phoneNumber": "2007",
+        "walks": [
+          { "walkCount": 24074, "createdAt": "2021-08-25T09:51:54.473Z" }
+        ],
+        "__collections__": {}
+      },
+      "권순창-6642": {
+        "phoneNumber": "6642",
+        "walks": [
+          { "walkCount": 6002, "createdAt": "2021-08-16T05:56:20.601Z" }
+        ],
+        "username": "권순창",
+        "__collections__": {}
+      },
+      "권오상-1471": {
+        "phoneNumber": "1471",
+        "walks": [
+          { "walkCount": 38000, "createdAt": "2021-08-13T02:08:43.321Z" }
+        ],
+        "username": "권오상",
+        "__collections__": {}
+      },
+      "권율-4504": {
+        "username": "권율",
+        "walks": [
+          { "walkCount": 8244, "createdAt": "2021-08-25T09:53:07.377Z" }
+        ],
+        "phoneNumber": "4504",
+        "__collections__": {}
+      },
+      "권지혁-7054": {
+        "walks": [
+          { "walkCount": 30000, "createdAt": "2021-08-13T02:05:13.069Z" }
+        ],
+        "username": "권지혁",
+        "phoneNumber": "7054",
+        "__collections__": {}
+      },
+      "기나영-5515": {
+        "phoneNumber": "5515",
+        "username": "기나영",
+        "walks": [
+          { "walkCount": 8168, "createdAt": "2021-08-25T13:35:06.794Z" }
+        ],
+        "__collections__": {}
+      },
+      "김경연-3062": {
+        "username": "김경연",
+        "phoneNumber": "3062",
+        "walks": [
+          { "createdAt": "2021-08-14T13:02:13.317Z", "walkCount": 8876 }
+        ],
+        "__collections__": {}
+      },
+      "김나영-5515": {
+        "phoneNumber": "5515",
+        "username": "김나영",
+        "walks": [
+          { "createdAt": "2021-08-15T14:14:47.416Z", "walkCount": 5212 },
+          { "walkCount": 9900, "createdAt": "2021-08-16T13:52:01.568Z" },
+          { "walkCount": 5225, "createdAt": "2021-08-17T13:58:37.686Z" },
+          { "createdAt": "2021-08-18T14:40:18.436Z", "walkCount": 8800 },
+          { "walkCount": 10765, "createdAt": "2021-08-21T14:14:03.944Z" },
+          { "createdAt": "2021-08-23T15:21:42.805Z", "walkCount": 12293 }
+        ],
+        "__collections__": {}
+      },
+      "김남희-0932": {
+        "phoneNumber": "0932",
+        "username": "김남희",
+        "walks": [
+          { "walkCount": 13765, "createdAt": "2021-08-08T11:08:58.828Z" }
+        ],
+        "__collections__": {}
+      },
+      "김대희-4371": {
+        "phoneNumber": "4371",
+        "username": "김대희",
+        "walks": [
+          { "walkCount": 6000, "createdAt": "2021-08-15T05:38:20.434Z" }
+        ],
+        "__collections__": {}
+      },
+      "김도연-4858": {
+        "walks": [
+          { "createdAt": "2021-08-15T02:37:57.099Z", "walkCount": 2453 },
+          { "walkCount": 2628, "createdAt": "2021-08-17T03:59:01.728Z" }
+        ],
+        "phoneNumber": "4858",
+        "username": "김도연",
+        "__collections__": {}
+      },
+      "김도영-0135": {
+        "phoneNumber": "0135",
+        "username": "김도영",
+        "walks": [
+          { "walkCount": 8968, "createdAt": "2021-08-26T13:20:19.529Z" }
+        ],
+        "__collections__": {}
+      },
+      "김도영-12532": {
+        "username": "김도영",
+        "phoneNumber": "12532",
+        "walks": [
+          { "createdAt": "2021-08-19T08:55:59.533Z", "walkCount": 12532 }
+        ],
+        "__collections__": {}
+      },
+      "김동진-9355": {
+        "username": "김동진",
+        "walks": [
+          { "createdAt": "2021-08-19T13:20:34.457Z", "walkCount": 21284 }
+        ],
+        "phoneNumber": "9355",
+        "__collections__": {}
+      },
+      "김동환-0109": {
+        "walks": [
+          { "createdAt": "2021-08-15T14:17:48.558Z", "walkCount": 6745 },
+          { "walkCount": 10022, "createdAt": "2021-08-16T13:43:49.775Z" },
+          { "createdAt": "2021-08-17T14:06:57.053Z", "walkCount": 6561 },
+          { "createdAt": "2021-08-18T14:42:03.411Z", "walkCount": 9447 },
+          { "createdAt": "2021-08-21T14:14:24.435Z", "walkCount": 15422 },
+          { "createdAt": "2021-08-23T15:25:32.668Z", "walkCount": 12980 },
+          { "createdAt": "2021-08-25T13:35:24.789Z", "walkCount": 7650 },
+          { "walkCount": 6512, "createdAt": "2021-08-27T04:59:34.541Z" }
+        ],
+        "phoneNumber": "0109",
+        "username": "김동환",
+        "__collections__": {}
+      },
+      "김래홍-9856": {
+        "phoneNumber": "9856",
+        "walks": [
+          { "walkCount": 6277, "createdAt": "2021-08-25T10:32:57.130Z" }
+        ],
+        "username": "김래홍",
+        "__collections__": {}
+      },
+      "김민우-6019": {
+        "walks": [
+          { "walkCount": 6277, "createdAt": "2021-08-25T10:32:09.478Z" },
+          { "walkCount": 10564, "createdAt": "2021-08-28T01:23:16.611Z" }
+        ],
+        "phoneNumber": "6019",
+        "username": "김민우",
+        "__collections__": {}
+      },
+      "김민우-6150": {
+        "walks": [
+          { "walkCount": 21480, "createdAt": "2021-08-22T12:27:54.695Z" }
+        ],
+        "phoneNumber": "6150",
+        "username": "김민우",
+        "__collections__": {}
+      },
+      "김보람-9434": {
+        "username": "김보람",
+        "walks": [
+          { "createdAt": "2021-08-16T12:12:08.315Z", "walkCount": 80005 },
+          { "walkCount": 4313, "createdAt": "2021-08-21T21:07:51.846Z" }
+        ],
+        "phoneNumber": "9434",
+        "__collections__": {}
+      },
+      "김성현-4478": {
+        "username": "김성현",
+        "phoneNumber": "4478",
+        "walks": [
+          { "walkCount": 2525, "createdAt": "2021-08-15T11:56:19.566Z" }
+        ],
+        "__collections__": {}
+      },
+      "김수인-6953": {
+        "username": "김수인",
+        "phoneNumber": "6953",
+        "walks": [
+          { "walkCount": 2525, "createdAt": "2021-08-15T11:56:33.080Z" }
+        ],
+        "__collections__": {}
+      },
+      "김순이-3041": {
+        "walks": [
+          { "walkCount": 7000, "createdAt": "2021-08-14T02:44:49.405Z" },
+          { "walkCount": 14000, "createdAt": "2021-08-19T22:45:39.783Z" }
+        ],
+        "username": "김순이",
+        "phoneNumber": "3041",
+        "__collections__": {}
+      },
+      "김윤숙-1191": {
+        "username": "김윤숙",
+        "walks": [
+          { "walkCount": 6200, "createdAt": "2021-08-26T08:56:38.461Z" }
+        ],
+        "phoneNumber": "1191",
+        "__collections__": {}
+      },
+      "김은수-4303": {
+        "phoneNumber": "4303",
+        "walks": [
+          { "walkCount": 17000, "createdAt": "2021-08-28T02:19:41.754Z" }
+        ],
+        "username": "김은수",
+        "__collections__": {}
+      },
+      "김은재-4371": {
+        "walks": [
+          { "walkCount": 6000, "createdAt": "2021-08-15T05:38:09.803Z" }
+        ],
+        "phoneNumber": "4371",
+        "username": "김은재",
+        "__collections__": {}
+      },
+      "김인수 참다운 봄소리 빛나무-1556": {
+        "phoneNumber": "1556",
+        "walks": [
+          { "createdAt": "2021-08-21T00:59:12.904Z", "walkCount": 17636 }
+        ],
+        "username": "김인수 참다운 봄소리 빛나무",
+        "__collections__": {}
+      },
+      "김자인-6953": {
+        "username": "김자인",
+        "phoneNumber": "6953",
+        "walks": [
+          { "createdAt": "2021-08-15T11:56:46.323Z", "walkCount": 2525 }
+        ],
+        "__collections__": {}
+      },
+      "김종일-5078": {
+        "walks": [
+          { "walkCount": 13940, "createdAt": "2021-08-15T02:32:34.373Z" }
+        ],
+        "username": "김종일",
+        "phoneNumber": "5078",
+        "__collections__": {}
+      },
+      "김준성-0222": {
+        "phoneNumber": "0222",
+        "username": "김준성",
+        "walks": [
+          { "walkCount": 15092, "createdAt": "2021-08-08T02:39:22.533Z" }
+        ],
+        "__collections__": {}
+      },
+      "김진경 장아영 김민욱 -3092": {
+        "username": "김진경 장아영 김민욱 ",
+        "phoneNumber": "3092",
+        "walks": [
+          { "createdAt": "2021-08-28T03:31:58.779Z", "walkCount": 35300 }
+        ],
+        "__collections__": {}
+      },
+      "김진경 장아영 김민욱-3092": {
+        "phoneNumber": "3092",
+        "walks": [
+          { "walkCount": 13000, "createdAt": "2021-08-19T12:24:42.905Z" },
+          { "createdAt": "2021-08-25T13:25:59.632Z", "walkCount": 4750 }
+        ],
+        "username": "김진경 장아영 김민욱",
+        "__collections__": {}
+      },
+      "김춘호-0760": {
+        "username": "김춘호",
+        "walks": [
+          { "walkCount": 127136, "createdAt": "2021-08-23T00:12:15.136Z" }
+        ],
+        "phoneNumber": "0760",
+        "__collections__": {}
+      },
+      "김춘호-0783": {
+        "walks": [
+          { "walkCount": 48370, "createdAt": "2021-08-28T09:24:46.649Z" }
+        ],
+        "username": "김춘호",
+        "phoneNumber": "0783",
+        "__collections__": {}
+      },
+      "김향지-7359": {
+        "phoneNumber": "7359",
+        "walks": [
+          { "createdAt": "2021-08-18T14:52:22.752Z", "walkCount": 13925 },
+          { "createdAt": "2021-08-20T13:51:09.246Z", "walkCount": 10638 },
+          { "walkCount": 10037, "createdAt": "2021-08-21T13:19:16.523Z" },
+          { "walkCount": 10776, "createdAt": "2021-08-28T10:30:01.482Z" }
+        ],
+        "username": "김향지",
+        "__collections__": {}
+      },
+      "김현우-0485": {
+        "username": "김현우",
+        "phoneNumber": "0485",
+        "walks": [
+          { "walkCount": 14449, "createdAt": "2021-08-17T13:21:12.095Z" }
+        ],
+        "__collections__": {}
+      },
+      "김형주-4371": {
+        "walks": [
+          { "walkCount": 6000, "createdAt": "2021-08-15T05:37:59.438Z" }
+        ],
+        "username": "김형주",
+        "phoneNumber": "4371",
+        "__collections__": {}
+      },
+      "김희경-3907": {
+        "walks": [
+          { "walkCount": 4693, "createdAt": "2021-08-15T03:45:18.686Z" }
+        ],
+        "phoneNumber": "3907",
+        "username": "김희경",
+        "__collections__": {}
+      },
+      "김희선-9657": {
+        "walks": [
+          { "walkCount": 6602, "createdAt": "2021-08-16T05:56:42.516Z" }
+        ],
+        "username": "김희선",
+        "phoneNumber": "9657",
+        "__collections__": {}
+      },
+      "김희우-6019": {
+        "phoneNumber": "6019",
+        "walks": [
+          { "walkCount": 6277, "createdAt": "2021-08-25T10:31:53.131Z" },
+          { "walkCount": 10564, "createdAt": "2021-08-28T01:23:03.577Z" }
+        ],
+        "username": "김희우",
+        "__collections__": {}
+      },
+      "노경애-7508": {
+        "username": "노경애",
+        "walks": [
+          { "createdAt": "2021-08-22T00:10:39.875Z", "walkCount": 9030 }
+        ],
+        "phoneNumber": "7508",
+        "__collections__": {}
+      },
+      "마민영-6466": {
+        "walks": [
+          { "walkCount": 13278, "createdAt": "2021-08-22T09:40:52.282Z" }
+        ],
+        "phoneNumber": "6466",
+        "username": "마민영",
+        "__collections__": {}
+      },
+      "마승민-6466": {
+        "username": "마승민",
+        "walks": [
+          { "walkCount": 10397, "createdAt": "2021-08-22T09:41:26.016Z" }
+        ],
+        "phoneNumber": "6466",
+        "__collections__": {}
+      },
+      "마은민-8921": {
+        "username": "마은민",
+        "phoneNumber": "8921",
+        "walks": [
+          { "createdAt": "2021-08-22T09:41:40.538Z", "walkCount": 11384 }
+        ],
+        "__collections__": {}
+      },
+      "맑은바람그니-2207": {
+        "phoneNumber": "2207",
+        "walks": [
+          { "createdAt": "2021-08-22T09:17:00.097Z", "walkCount": 11128 }
+        ],
+        "username": "맑은바람그니",
+        "__collections__": {}
+      },
+      "문춘교-0485": {
+        "walks": [
+          { "walkCount": 9497, "createdAt": "2021-08-17T10:29:16.988Z" }
+        ],
+        "username": "문춘교",
+        "phoneNumber": "0485",
+        "__collections__": {}
+      },
+      "박민호-2014": {
+        "walks": [
+          { "walkCount": 33523, "createdAt": "2021-08-25T16:23:02.179Z" }
+        ],
+        "username": "박민호",
+        "phoneNumber": "2014",
+        "__collections__": {}
+      },
+      "박병준-6900": {
+        "username": "박병준",
+        "walks": [
+          { "createdAt": "2021-08-15T02:38:29.907Z", "walkCount": 2908 }
+        ],
+        "phoneNumber": "6900",
+        "__collections__": {}
+      },
+      "박예담-0908": {
+        "phoneNumber": "0908",
+        "username": "박예담",
+        "walks": [
+          { "walkCount": 17000, "createdAt": "2021-08-22T23:05:46.698Z" }
+        ],
+        "__collections__": {}
+      },
+      "박지영-4838": {
+        "phoneNumber": "4838",
+        "username": "박지영",
+        "walks": [
+          { "walkCount": 5385, "createdAt": "2021-08-16T12:12:37.938Z" }
+        ],
+        "__collections__": {}
+      },
+      "박지혜-8311": {
+        "username": "박지혜",
+        "walks": [
+          { "walkCount": 13000, "createdAt": "2021-08-16T13:15:50.226Z" }
+        ],
+        "phoneNumber": "8311",
+        "__collections__": {}
+      },
+      "박태희-9801": {
+        "walks": [
+          { "createdAt": "2021-08-17T11:30:20.298Z", "walkCount": 10507 }
+        ],
+        "username": "박태희",
+        "phoneNumber": "9801",
+        "__collections__": {}
+      },
+      "박형근-0908": {
+        "walks": [
+          { "createdAt": "2021-08-22T23:04:58.971Z", "walkCount": 17000 }
+        ],
+        "username": "박형근",
+        "phoneNumber": "0908",
+        "__collections__": {}
+      },
+      "배선나-4504": {
+        "phoneNumber": "4504",
+        "walks": [
+          { "createdAt": "2021-08-25T09:52:45.380Z", "walkCount": 8244 }
+        ],
+        "username": "배선나",
+        "__collections__": {}
+      },
+      "배수연-2808": {
+        "walks": [
+          { "createdAt": "2021-08-08T01:29:17.288Z", "walkCount": 5000 }
+        ],
+        "username": "배수연",
+        "phoneNumber": "2808",
+        "__collections__": {}
+      },
+      "배승혜-2486": {
+        "username": "배승혜",
+        "walks": [
+          { "walkCount": 10000, "createdAt": "2021-08-08T15:11:51.920Z" },
+          { "walkCount": 10000, "createdAt": "2021-08-09T22:42:19.772Z" }
+        ],
+        "phoneNumber": "2486",
+        "__collections__": {}
+      },
+      "배신도-2256": {
+        "phoneNumber": "2256",
+        "walks": [
+          { "walkCount": 10065, "createdAt": "2021-08-14T13:00:40.089Z" }
+        ],
+        "username": "배신도",
+        "__collections__": {}
+      },
+      "배하민-3062": {
+        "username": "배하민",
+        "walks": [
+          { "createdAt": "2021-08-14T13:01:18.980Z", "walkCount": 11431 }
+        ],
+        "phoneNumber": "3062",
+        "__collections__": {}
+      },
+      "배하연-3062": {
+        "walks": [
+          { "createdAt": "2021-08-14T13:03:06.507Z", "walkCount": 11431 }
+        ],
+        "phoneNumber": "3062",
+        "username": "배하연",
+        "__collections__": {}
+      },
+      "변지원-9356": {
+        "phoneNumber": "9356",
+        "username": "변지원",
+        "walks": [
+          { "walkCount": 2150, "createdAt": "2021-08-25T11:29:29.970Z" }
+        ],
+        "__collections__": {}
+      },
+      "사은옥-2738": {
+        "walks": [
+          { "walkCount": 16103, "createdAt": "2021-08-26T02:28:52.616Z" }
+        ],
+        "phoneNumber": "2738",
+        "username": "사은옥",
+        "__collections__": {}
+      },
+      "서반석-3012": {
+        "username": "서반석",
+        "phoneNumber": "3012",
+        "walks": [
+          { "walkCount": 1454, "createdAt": "2021-08-14T13:24:03.946Z" },
+          { "createdAt": "2021-08-19T11:08:04.006Z", "walkCount": 1000 },
+          { "createdAt": "2021-08-23T10:52:04.831Z", "walkCount": 9224 }
+        ],
+        "__collections__": {}
+      },
+      "서원섭 권하영 열매-8650": {
+        "username": "서원섭 권하영 열매",
+        "phoneNumber": "8650",
+        "walks": [
+          { "createdAt": "2021-08-16T10:21:31.149Z", "walkCount": 30000 }
+        ],
+        "__collections__": {}
+      },
+      "성미숙-7603": {
+        "phoneNumber": "7603",
+        "username": "성미숙",
+        "walks": [
+          { "walkCount": 8061, "createdAt": "2021-08-18T03:05:57.023Z" },
+          { "createdAt": "2021-08-19T08:38:04.960Z", "walkCount": 11448 },
+          { "createdAt": "2021-08-19T08:38:05.788Z", "walkCount": 11448 },
+          { "walkCount": 12501, "createdAt": "2021-08-22T13:10:20.622Z" },
+          { "walkCount": 11000, "createdAt": "2021-08-24T12:35:26.631Z" }
+        ],
+        "__collections__": {}
+      },
+      "소지원-0066": {
+        "walks": [
+          { "createdAt": "2021-08-16T06:00:08.957Z", "walkCount": 24741 }
+        ],
+        "phoneNumber": "0066",
+        "username": "소지원",
+        "__collections__": {}
+      },
+      "손수진-0908": {
+        "phoneNumber": "0908",
+        "walks": [
+          { "createdAt": "2021-08-22T23:04:37.207Z", "walkCount": 17000 }
+        ],
+        "username": "손수진",
+        "__collections__": {}
+      },
+      "송나은-5849": {
+        "walks": [
+          { "createdAt": "2021-08-09T12:13:15.706Z", "walkCount": 4100 },
+          { "walkCount": 3000, "createdAt": "2021-08-10T08:59:22.504Z" },
+          { "walkCount": 6000, "createdAt": "2021-08-16T11:06:34.727Z" },
+          { "walkCount": 4000, "createdAt": "2021-08-20T11:51:35.429Z" },
+          { "walkCount": 6000, "createdAt": "2021-08-22T12:51:50.650Z" },
+          { "createdAt": "2021-08-25T05:54:26.286Z", "walkCount": 3000 }
+        ],
+        "phoneNumber": "5849",
+        "username": "송나은",
+        "__collections__": {}
+      },
+      "송현우-1845": {
+        "username": "송현우",
+        "phoneNumber": "1845",
+        "walks": [
+          { "createdAt": "2021-08-26T13:35:53.122Z", "walkCount": 12901 }
+        ],
+        "__collections__": {}
+      },
+      "신지율-7371": {
+        "phoneNumber": "7371",
+        "walks": [
+          { "createdAt": "2021-08-25T11:28:57.622Z", "walkCount": 2150 }
+        ],
+        "username": "신지율",
+        "__collections__": {}
+      },
+      "신학동-7371": {
+        "username": "신학동",
+        "phoneNumber": "7371",
+        "walks": [
+          { "walkCount": 2150, "createdAt": "2021-08-25T11:28:41.422Z" }
+        ],
+        "__collections__": {}
+      },
+      "신현주-9322": {
+        "phoneNumber": "9322",
+        "walks": [
+          { "createdAt": "2021-08-12T07:37:46.894Z", "walkCount": 14599 },
+          { "createdAt": "2021-08-14T08:20:32.929Z", "walkCount": 14599 }
+        ],
+        "username": "신현주",
+        "__collections__": {}
+      },
+      "안은정-0760": {
+        "username": "안은정",
+        "phoneNumber": "0760",
+        "walks": [
+          { "walkCount": 53256, "createdAt": "2021-08-23T00:18:55.522Z" }
+        ],
+        "__collections__": {}
+      },
+      "양병훈-7359": {
+        "walks": [
+          { "walkCount": 15438, "createdAt": "2021-08-18T14:52:37.299Z" },
+          { "walkCount": 8366, "createdAt": "2021-08-20T13:50:52.052Z" },
+          { "walkCount": 12086, "createdAt": "2021-08-21T13:18:58.261Z" },
+          { "createdAt": "2021-08-28T10:29:40.789Z", "walkCount": 12352 }
+        ],
+        "username": "양병훈",
+        "phoneNumber": "7359",
+        "__collections__": {}
+      },
+      "오영지 -4371": {
+        "phoneNumber": "4371",
+        "username": "오영지 ",
+        "walks": [
+          { "createdAt": "2021-08-15T05:37:44.047Z", "walkCount": 6000 }
+        ],
+        "__collections__": {}
+      },
+      "오영지-4371": {
+        "phoneNumber": "4371",
+        "walks": [
+          { "walkCount": 6008, "createdAt": "2021-08-25T18:00:04.952Z" }
+        ],
+        "username": "오영지",
+        "__collections__": {}
+      },
+      "오효재-0382": {
+        "username": "오효재",
+        "phoneNumber": "0382",
+        "walks": [
+          { "createdAt": "2021-08-17T13:49:32.577Z", "walkCount": 5016 }
+        ],
+        "__collections__": {}
+      },
+      "우미효-8325": {
+        "username": "우미효",
+        "phoneNumber": "8325",
+        "walks": [
+          { "walkCount": 10000, "createdAt": "2021-08-12T07:28:53.488Z" }
+        ],
+        "__collections__": {}
+      },
+      "원종호-3820": {
+        "phoneNumber": "3820",
+        "username": "원종호",
+        "walks": [
+          { "walkCount": 4000, "createdAt": "2021-08-22T00:44:00.988Z" }
+        ],
+        "__collections__": {}
+      },
+      "윤상도-8425": {
+        "username": "윤상도",
+        "phoneNumber": "8425",
+        "walks": [
+          { "createdAt": "2021-08-15T14:19:23.347Z", "walkCount": 8974 },
+          { "createdAt": "2021-08-16T14:16:46.586Z", "walkCount": 11390 }
+        ],
+        "__collections__": {}
+      },
+      "윤자영-8311": {
+        "phoneNumber": "8311",
+        "walks": [
+          { "createdAt": "2021-08-16T13:16:24.795Z", "walkCount": 13000 }
+        ],
+        "username": "윤자영",
+        "__collections__": {}
+      },
+      "윤지원-1799": {
+        "username": "윤지원",
+        "walks": [
+          { "walkCount": 13966, "createdAt": "2021-08-16T13:15:25.244Z" }
+        ],
+        "phoneNumber": "1799",
+        "__collections__": {}
+      },
+      "윤채영-1799": {
+        "phoneNumber": "1799",
+        "walks": [
+          { "walkCount": 13000, "createdAt": "2021-08-16T13:16:09.393Z" }
+        ],
+        "username": "윤채영",
+        "__collections__": {}
+      },
+      "이미-0710": {
+        "phoneNumber": "0710",
+        "username": "이미현",
+        "walks": [
+          { "walkCount": 3666, "createdAt": "2021-08-11T06:58:29.730Z" }
+        ],
+        "__collections__": {}
+      },
+      "이미현-0710": {
+        "walks": [
+          { "walkCount": 3666, "createdAt": "2021-08-11T06:58:29.730Z" },
+          { "walkCount": 7038, "createdAt": "2021-08-12T10:45:09.194Z" }
+        ],
+        "username": "이미현",
+        "phoneNumber": "0710",
+        "__collections__": {}
+      },
+      "이시온-2809": {
+        "username": "이시온",
+        "phoneNumber": "2809",
+        "walks": [
+          { "createdAt": "2021-08-08T01:30:02.227Z", "walkCount": 5000 }
+        ],
+        "__collections__": {}
+      },
+      "이연경-5216": {
+        "username": "이연경",
+        "walks": [
+          { "walkCount": 18900, "createdAt": "2021-08-17T04:37:37.533Z" }
+        ],
+        "phoneNumber": "5216",
+        "__collections__": {}
+      },
+      "이영광-2808": {
+        "username": "이영광",
+        "phoneNumber": "2808",
+        "walks": [
+          { "walkCount": 5000, "createdAt": "2021-08-08T01:30:13.695Z" }
+        ],
+        "__collections__": {}
+      },
+      "이영은-8211": {
+        "phoneNumber": "8211",
+        "username": "이영은",
+        "walks": [
+          { "walkCount": 2174, "createdAt": "2021-08-09T10:37:00.725Z" },
+          { "createdAt": "2021-08-10T11:24:27.721Z", "walkCount": 2811 },
+          { "createdAt": "2021-08-12T08:18:24.305Z", "walkCount": 5094 },
+          { "walkCount": 4268, "createdAt": "2021-08-13T11:25:52.479Z" },
+          { "walkCount": 9789, "createdAt": "2021-08-16T13:29:41.409Z" },
+          { "createdAt": "2021-08-17T11:30:40.119Z", "walkCount": 8511 },
+          { "walkCount": 6410, "createdAt": "2021-08-18T10:56:02.514Z" },
+          { "createdAt": "2021-08-20T12:02:13.006Z", "walkCount": 7340 },
+          { "createdAt": "2021-08-22T11:14:55.410Z", "walkCount": 6768 },
+          { "createdAt": "2021-08-23T12:18:56.111Z", "walkCount": 5873 },
+          { "walkCount": 4104, "createdAt": "2021-08-26T13:27:46.986Z" },
+          { "walkCount": 5092, "createdAt": "2021-08-27T14:17:08.001Z" }
+        ],
+        "__collections__": {}
+      },
+      "이온유-0760": {
+        "walks": [
+          { "walkCount": 53256, "createdAt": "2021-08-23T00:17:51.705Z" }
+        ],
+        "username": "이온유",
+        "phoneNumber": "0760",
+        "__collections__": {}
+      },
+      "이용찬-0398": {
+        "walks": [
+          { "walkCount": 53256, "createdAt": "2021-08-23T00:17:29.193Z" }
+        ],
+        "username": "이용찬",
+        "phoneNumber": "0398",
+        "__collections__": {}
+      },
+      "이은정-9826": {
+        "username": "이은정",
+        "walks": [
+          { "createdAt": "2021-08-17T14:54:15.767Z", "walkCount": 5112 }
+        ],
+        "phoneNumber": "9826",
+        "__collections__": {}
+      },
+      "이정도-1902": {
+        "username": "이정도",
+        "phoneNumber": "1902",
+        "walks": [
+          { "createdAt": "2021-08-08T01:28:52.901Z", "walkCount": 5000 }
+        ],
+        "__collections__": {}
+      },
+      "이주영-1108": {
+        "phoneNumber": "1108",
+        "username": "이주영",
+        "walks": [
+          { "createdAt": "2021-08-13T11:00:19.540Z", "walkCount": 12227 },
+          { "walkCount": 4839, "createdAt": "2021-08-19T11:11:07.276Z" }
+        ],
+        "__collections__": {}
+      },
+      "이진희-0957": {
+        "username": "이진희",
+        "phoneNumber": "0957",
+        "walks": [
+          { "walkCount": 62757, "createdAt": "2021-08-23T00:18:38.002Z" }
+        ],
+        "__collections__": {}
+      },
+      "이창근-9696": {
+        "walks": [
+          { "walkCount": 4693, "createdAt": "2021-08-15T03:50:17.079Z" }
+        ],
+        "username": "이창근",
+        "phoneNumber": "9696",
+        "__collections__": {}
+      },
+      "이창숙-3871": {
+        "username": "이창숙",
+        "phoneNumber": "3871",
+        "walks": [
+          { "createdAt": "2021-08-26T08:56:51.459Z", "walkCount": 6200 }
+        ],
+        "__collections__": {}
+      },
+      "이호일 황춘식-3617": {
+        "username": "이호일 황춘식",
+        "walks": [
+          { "createdAt": "2021-08-08T00:42:42.401Z", "walkCount": 0 },
+          { "walkCount": 46000, "createdAt": "2021-08-10T13:19:27.388Z" }
+        ],
+        "phoneNumber": "3617",
+        "__collections__": {}
+      },
+      "이홍균-5840": {
+        "username": "이홍균",
+        "walks": [
+          { "walkCount": 15912, "createdAt": "2021-08-17T22:49:39.026Z" }
+        ],
+        "phoneNumber": "5840",
+        "__collections__": {}
+      },
+      "이효진-7054": {
+        "username": "이효진",
+        "walks": [
+          { "createdAt": "2021-08-13T02:04:36.531Z", "walkCount": 32172 }
+        ],
+        "phoneNumber": "7054",
+        "__collections__": {}
+      },
+      "이효현-6466": {
+        "walks": [
+          { "walkCount": 11961, "createdAt": "2021-08-22T09:41:09.570Z" }
+        ],
+        "phoneNumber": "6466",
+        "username": "이효현",
+        "__collections__": {}
+      },
+      "임성원-2283": {
+        "walks": [
+          { "createdAt": "2021-08-16T13:58:36.774Z", "walkCount": 10501 }
+        ],
+        "phoneNumber": "2283",
+        "username": "임성원",
+        "__collections__": {}
+      },
+      "임지유-2283": {
+        "walks": [
+          { "walkCount": 10501, "createdAt": "2021-08-16T13:59:20.328Z" }
+        ],
+        "username": "임지유",
+        "phoneNumber": "2283",
+        "__collections__": {}
+      },
+      "임혜민-6953": {
+        "username": "임혜민",
+        "phoneNumber": "6953",
+        "walks": [
+          { "walkCount": 2525, "createdAt": "2021-08-15T11:56:03.712Z" }
+        ],
+        "__collections__": {}
+      },
+      "전은미-2420": {
+        "walks": [
+          { "walkCount": 8596, "createdAt": "2021-08-10T02:47:47.375Z" },
+          { "walkCount": 10000, "createdAt": "2021-08-12T01:39:57.996Z" },
+          { "createdAt": "2021-08-16T12:12:09.729Z", "walkCount": 7749 },
+          { "walkCount": 8071, "createdAt": "2021-08-17T10:24:11.247Z" },
+          { "walkCount": 7414, "createdAt": "2021-08-19T13:52:22.457Z" },
+          { "createdAt": "2021-08-26T10:05:21.978Z", "walkCount": 7337 },
+          { "createdAt": "2021-08-28T10:02:57.707Z", "walkCount": 4389 }
+        ],
+        "username": "전은미",
+        "phoneNumber": "2420",
+        "__collections__": {}
+      },
+      "정아름-6019": {
+        "username": "정아름",
+        "walks": [
+          { "walkCount": 6277, "createdAt": "2021-08-25T10:32:21.630Z" },
+          { "walkCount": 10564, "createdAt": "2021-08-28T01:22:05.940Z" }
+        ],
+        "phoneNumber": "6019",
+        "__collections__": {}
+      },
+      "정은주 김정균-6936": {
+        "username": "정은주 김정균",
+        "phoneNumber": "6936",
+        "walks": [
+          { "createdAt": "2021-08-25T13:37:01.275Z", "walkCount": 10451 },
+          { "createdAt": "2021-08-25T13:37:25.496Z", "walkCount": 7388 },
+          { "walkCount": 7280, "createdAt": "2021-08-25T13:37:45.140Z" },
+          { "createdAt": "2021-08-25T13:38:04.571Z", "walkCount": 7003 },
+          { "walkCount": 8639, "createdAt": "2021-08-25T13:38:25.079Z" }
+        ],
+        "__collections__": {}
+      },
+      "정지연-3041": {
+        "phoneNumber": "3041",
+        "username": "정지연",
+        "walks": [
+          { "createdAt": "2021-08-14T11:37:31.107Z", "walkCount": 11319 }
+        ],
+        "__collections__": {}
+      },
+      "정지후-3041": {
+        "walks": [
+          { "walkCount": 11319, "createdAt": "2021-08-14T11:37:42.493Z" }
+        ],
+        "username": "정지후",
+        "phoneNumber": "3041",
+        "__collections__": {}
+      },
+      "정진욱-7386": {
+        "phoneNumber": "7386",
+        "walks": [
+          { "createdAt": "2021-08-14T11:37:19.974Z", "walkCount": 11319 }
+        ],
+        "username": "정진욱",
+        "__collections__": {}
+      },
+      "조규진-1247": {
+        "phoneNumber": "1247",
+        "username": "조규진",
+        "walks": [
+          { "walkCount": 15000, "createdAt": "2021-08-21T07:55:37.422Z" }
+        ],
+        "__collections__": {}
+      },
+      "주승환-0948": {
+        "phoneNumber": "0948",
+        "username": "주승환",
+        "walks": [
+          { "createdAt": "2021-08-14T06:22:34.634Z", "walkCount": 25789 },
+          { "walkCount": 40749, "createdAt": "2021-08-21T07:01:48.764Z" }
+        ],
+        "__collections__": {}
+      },
+      "지연수-1587": {
+        "phoneNumber": "1587",
+        "username": "지연수",
+        "walks": [
+          { "walkCount": 8796, "createdAt": "2021-08-23T17:49:44.490Z" }
+        ],
+        "__collections__": {}
+      },
+      "천나무-9826": {
+        "phoneNumber": "9826",
+        "username": "천나무",
+        "walks": [
+          { "walkCount": 4718, "createdAt": "2021-08-17T14:53:26.900Z" }
+        ],
+        "__collections__": {}
+      },
+      "천정훈-9826": {
+        "username": "천정훈",
+        "phoneNumber": "9826",
+        "walks": [
+          { "walkCount": 6273, "createdAt": "2021-08-17T14:52:02.627Z" }
+        ],
+        "__collections__": {}
+      },
+      "최순봉-1334": {
+        "walks": [
+          { "createdAt": "2021-08-26T08:56:20.083Z", "walkCount": 6200 }
+        ],
+        "username": "최순봉",
+        "phoneNumber": "1334",
+        "__collections__": {}
+      },
+      "최정훈-3338": {
+        "walks": [
+          { "walkCount": 8648, "createdAt": "2021-08-10T13:28:19.947Z" }
+        ],
+        "username": "최정훈",
+        "phoneNumber": "3338",
+        "__collections__": {}
+      },
+      "최지원-8226": {
+        "username": "최지원",
+        "walks": [
+          { "createdAt": "2021-08-08T02:45:50.419Z", "walkCount": 16680 },
+          { "walkCount": 2641, "createdAt": "2021-08-10T14:23:33.327Z" },
+          { "walkCount": 17612, "createdAt": "2021-08-14T12:53:01.956Z" },
+          { "walkCount": 1815, "createdAt": "2021-08-18T10:22:16.682Z" },
+          { "walkCount": 6866, "createdAt": "2021-08-20T14:26:38.835Z" },
+          { "createdAt": "2021-08-27T23:10:49.045Z", "walkCount": 12399 }
+        ],
+        "phoneNumber": "8226",
+        "__collections__": {}
+      },
+      "하대웅 -1535": {
+        "phoneNumber": "1535",
+        "walks": [
+          { "walkCount": 10000, "createdAt": "2021-08-12T07:28:34.030Z" }
+        ],
+        "username": "하대웅 ",
+        "__collections__": {}
+      },
+      "하준우-1535": {
+        "phoneNumber": "1535",
+        "username": "하준우",
+        "walks": [
+          { "createdAt": "2021-08-12T07:29:09.341Z", "walkCount": 10000 }
+        ],
+        "__collections__": {}
+      },
+      "허사랑-6035": {
+        "walks": [
+          { "createdAt": "2021-08-18T13:26:56.846Z", "walkCount": 4818 }
+        ],
+        "username": "허사랑",
+        "phoneNumber": "6035",
+        "__collections__": {}
+      },
+      "허주혜-6035": {
+        "walks": [
+          { "walkCount": 17154, "createdAt": "2021-08-08T07:33:46.431Z" },
+          { "walkCount": 16791, "createdAt": "2021-08-14T13:25:21.988Z" },
+          { "walkCount": 15000, "createdAt": "2021-08-28T02:15:43.323Z" }
+        ],
+        "phoneNumber": "6035",
+        "username": "허주혜",
+        "__collections__": {}
+      },
+      "홍성남-7410": {
+        "phoneNumber": "7410",
+        "username": "홍성남",
+        "walks": [
+          { "walkCount": 3987, "createdAt": "2021-08-14T13:22:00.888Z" },
+          { "createdAt": "2021-08-15T01:24:59.189Z", "walkCount": 5655 },
+          { "createdAt": "2021-08-15T12:23:49.131Z", "walkCount": 4781 },
+          { "walkCount": 5916, "createdAt": "2021-08-16T02:10:28.628Z" },
+          { "walkCount": 4920, "createdAt": "2021-08-17T23:24:12.390Z" },
+          { "createdAt": "2021-08-19T12:17:07.182Z", "walkCount": 6205 },
+          { "createdAt": "2021-08-20T13:06:35.394Z", "walkCount": 6987 },
+          { "walkCount": 6036, "createdAt": "2021-08-22T01:15:27.034Z" },
+          { "walkCount": 6280, "createdAt": "2021-08-22T08:58:48.504Z" },
+          { "createdAt": "2021-08-22T23:32:31.168Z", "walkCount": 6612 },
+          { "createdAt": "2021-08-25T09:59:16.273Z", "walkCount": 7050 },
+          { "createdAt": "2021-08-26T05:28:01.351Z", "walkCount": 7263 },
+          { "walkCount": 6153, "createdAt": "2021-08-28T04:40:50.171Z" }
+        ],
+        "__collections__": {}
+      },
+      "홍성미-9610": {
+        "phoneNumber": "9610",
+        "walks": [
+          { "createdAt": "2021-08-08T01:33:04.832Z", "walkCount": 10000 },
+          { "walkCount": 3000, "createdAt": "2021-08-09T12:43:37.046Z" },
+          { "walkCount": 15000, "createdAt": "2021-08-10T11:31:10.671Z" }
+        ],
+        "username": "홍성미",
+        "__collections__": {}
+      },
+      "홍수민-5957": {
+        "username": "홍수민",
+        "phoneNumber": "5957",
+        "walks": [
+          { "walkCount": 30000, "createdAt": "2021-08-24T05:26:12.699Z" }
+        ],
+        "__collections__": {}
+      },
+      "황종윤-1603": {
+        "username": "황종윤",
+        "phoneNumber": "1603",
+        "walks": [
+          { "createdAt": "2021-08-17T04:38:20.099Z", "walkCount": 28990 }
+        ],
+        "__collections__": {}
+      }
+    }
+  }
+}
