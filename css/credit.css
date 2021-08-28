@@ -1,0 +1,15 @@
+#deskImg {
+  margin: auto;
+  width: 130px;
+  height: 130px;
+}
+
+#walkTogetherSection {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.walkTogether {
+  font-size: 30px;
+  line-height: normal;
+}

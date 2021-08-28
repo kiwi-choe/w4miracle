@@ -1,14 +1,14 @@
-const walkCountInputForm = document.getElementById("walkCount-form");
-const username = walkCountInputForm.querySelector("#username");
-const phoneNumber = walkCountInputForm.querySelector("#phoneNumber");
-const walkCount = walkCountInputForm.querySelector("#walkCount");
+// const walkCountInputForm = document.getElementById("walkCount-form");
+const username = document.querySelector("#username");
+const phoneNumber = document.querySelector("#phoneNumber");
+const walkCount = document.querySelector("#walkCount");
 const totalWalkCnt = document.querySelector(".chart__value");
 const elNumOfDesks = document.querySelector(".chart__numOfDesks");
 const elDeskImg = document.querySelector("#chart__deskImg");
-const thumbnailContainer = document.querySelector('#thumbnail__container');
+const thumbnailContainer = document.querySelector("#thumbnail__container");
 const userTable = document.querySelector("#users");
 const elBoard = document.querySelector("#board");
-const seeMoreBtn = document.querySelector("#seeMore");
+// const seeMoreBtn = document.querySelector("#seeMore");
 const headerLogoSection = document.querySelector("#header");
 const deskAnimImage = document.querySelector(".img_desk_anmation");
 
@@ -55,10 +55,10 @@ function selectTotalWalkCount() {
 selectTotalWalkCount();
 
 // GET  입력된 걸음 목록
-function selectUserList() {
-  getWalkLogs();
-}
-selectUserList();
+// function selectUserList() {
+//   getWalkLogs();
+// }
+// selectUserList();
 
 // 누적 책상 수 가져오기
 async function selectNumOfDesks() {
@@ -66,11 +66,11 @@ async function selectNumOfDesks() {
 }
 selectNumOfDesks();
 
-deskAnimImage.addEventListener("animationstart", () => {});
-deskAnimImage.addEventListener("animationend", () => {
-  deskAnimImage.classList.remove("active");
-  deskAnimImage.style.setProperty("display", "none");
-});
+// deskAnimImage.addEventListener("animationstart", () => {});
+// deskAnimImage.addEventListener("animationend", () => {
+//   deskAnimImage.classList.remove("active");
+//   deskAnimImage.style.setProperty("display", "none");
+// });
 function showDeskAnimation() {
   deskAnimImage.style.setProperty("display", "block");
   deskAnimImage.classList.toggle("active");
@@ -123,7 +123,7 @@ async function onSubmit(info) {
     console.log(e);
   }
 }
-walkCountInputForm.addEventListener("submit", onSubmit);
+// walkCountInputForm.addEventListener("submit", onSubmit);
 
 async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
   const numOfDesks = (latestTotalWalkCount + Number(walkCount)) / 50000;
@@ -159,7 +159,11 @@ function showSeeMoreButton() {
 
 function validateInputData(username, phoneNumber, walkCount) {
   return (
-    username && phoneNumber && walkCount && walkCount > 0 && String(phoneNumber).length === 4
+    username &&
+    phoneNumber &&
+    walkCount &&
+    walkCount > 0 &&
+    String(phoneNumber).length === 4
   );
 }
 
@@ -178,14 +182,14 @@ function clickInit() {
 }
 
 // 더보기
-function onClickSeeMore() {
-  if (isDoubleClicked() === true) {
-    return;
-  }
-  
-  getNextWalkLogs();
-}
-seeMoreBtn.addEventListener("click", onClickSeeMore);
+// function onClickSeeMore() {
+//   if (isDoubleClicked() === true) {
+//     return;
+//   }
+
+//   getNextWalkLogs();
+// }
+// seeMoreBtn.addEventListener("click", onClickSeeMore);
 /**
  * DB
  */
@@ -225,37 +229,37 @@ async function getNumOfDesks() {
   return chartInfo.numOfDesks;
 }
 
-async function getWalkLogs() {
-  await db
-    .collection(COL_WALKLOG)
-    .orderBy("createdAt", "desc")
-    .limit(GET_WALKLOG_LIMIT_COUNT)
-    .get()
-    .then((snapshot) => {
-      snapshot.docs.forEach((doc) => {
-        if (doc.length !== 0) {
-          elBoard.style.display = "block";
-          const walkCount = Number(doc.data().walkCount).toLocaleString();
-          const totalWalkCount = Number(
-            doc.data().totalWalkCount
-          ).toLocaleString();
+// async function getWalkLogs() {
+//   await db
+//     .collection(COL_WALKLOG)
+//     .orderBy("createdAt", "desc")
+//     .limit(GET_WALKLOG_LIMIT_COUNT)
+//     .get()
+//     .then((snapshot) => {
+//       snapshot.docs.forEach((doc) => {
+//         if (doc.length !== 0) {
+//           elBoard.style.display = "block";
+//           const walkCount = Number(doc.data().walkCount).toLocaleString();
+//           const totalWalkCount = Number(
+//             doc.data().totalWalkCount
+//           ).toLocaleString();
 
-          addWalkLogTable(
-            doc.data().username,
-            doc.data().phoneNumber,
-            walkCount,
-            totalWalkCount
-          );
-        }
-      });
-      // check if last item
-      if (snapshot.docs.length < GET_WALKLOG_LIMIT_COUNT) {
-        hideSeeMoreButton();
-        return;
-      }
-      lastVisible = snapshot.docs[snapshot.docs.length - 1];
-    });
-}
+//           addWalkLogTable(
+//             doc.data().username,
+//             doc.data().phoneNumber,
+//             walkCount,
+//             totalWalkCount
+//           );
+//         }
+//       });
+//       // check if last item
+//       if (snapshot.docs.length < GET_WALKLOG_LIMIT_COUNT) {
+//         hideSeeMoreButton();
+//         return;
+//       }
+//       lastVisible = snapshot.docs[snapshot.docs.length - 1];
+//     });
+// }
 
 async function getNextWalkLogs() {
   await db
@@ -288,24 +292,24 @@ async function getNextWalkLogs() {
     });
 }
 
-function addWalkLogTable(username, phoneNumber, walkCount, totalWalkCount) {
-  const tr = document.createElement("tr");
-  const tdUsername = document.createElement("td");
-  const tdPhoneNumber = document.createElement("td");
-  const tdWalkCount = document.createElement("td");
-  const tdTotalWalkCount = document.createElement("td");
+// function addWalkLogTable(username, phoneNumber, walkCount, totalWalkCount) {
+//   const tr = document.createElement("tr");
+//   const tdUsername = document.createElement("td");
+//   const tdPhoneNumber = document.createElement("td");
+//   const tdWalkCount = document.createElement("td");
+//   const tdTotalWalkCount = document.createElement("td");
 
-  tdUsername.setAttribute("class", "username");
-  tdPhoneNumber.setAttribute("class", "phoneNumber");
-  tdWalkCount.setAttribute("class", "walkCount");
-  tdTotalWalkCount.setAttribute("class", "totalWalkCount");
-  tdUsername.textContent = username;
-  tdPhoneNumber.textContent = phoneNumber;
-  tdWalkCount.textContent = walkCount;
-  tdTotalWalkCount.textContent = totalWalkCount;
-  tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
-  userTable.appendChild(tr);
-}
+//   tdUsername.setAttribute("class", "username");
+//   tdPhoneNumber.setAttribute("class", "phoneNumber");
+//   tdWalkCount.setAttribute("class", "walkCount");
+//   tdTotalWalkCount.setAttribute("class", "totalWalkCount");
+//   tdUsername.textContent = username;
+//   tdPhoneNumber.textContent = phoneNumber;
+//   tdWalkCount.textContent = walkCount;
+//   tdTotalWalkCount.textContent = totalWalkCount;
+//   tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
+//   userTable.appendChild(tr);
+// }
 
 function isNumber(walkCount) {
   const walkCountNo = Number(walkCount);
@@ -377,11 +381,8 @@ async function userExist(username, phoneNumber) {
   return userWalk;
 }
 
-thumbnailContainer.addEventListener('click', () => {
-  // window.location('../pages/gallary.html')
-})
-
 function onClickThumbnailSection() {
+  console.log("clcick!!!!!!!!!!!!");
   window.location.href = "../pages/gallary.html";
 }
 thumbnailContainer.addEventListener("click", onClickThumbnailSection);
