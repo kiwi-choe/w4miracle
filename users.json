@@ -10,22 +10,6 @@
         "phoneNumber": "9175",
         "__collections__": {}
       },
-      "test-1234": {
-        "phoneNumber": "1234",
-        "username": "test",
-        "walks": [
-          { "walkCount": 100, "createdAt": "2021-08-19T11:04:04.566Z" }
-        ],
-        "__collections__": {}
-      },
-      "test-3012": {
-        "phoneNumber": "3012",
-        "username": "test",
-        "walks": [
-          { "createdAt": "2021-08-19T11:06:51.076Z", "walkCount": 1000 }
-        ],
-        "__collections__": {}
-      },
       "강민정-6176": {
         "phoneNumber": "6176",
         "username": "강민정",
@@ -117,14 +101,6 @@
           { "walkCount": 30000, "createdAt": "2021-08-13T02:05:13.069Z" }
         ],
         "username": "권지혁",
-        "__collections__": {}
-      },
-      "기나영-5515": {
-        "phoneNumber": "5515",
-        "walks": [
-          { "walkCount": 8168, "createdAt": "2021-08-25T13:35:06.794Z" }
-        ],
-        "username": "기나영",
         "__collections__": {}
       },
       "김경연-3062": {
@@ -765,14 +741,6 @@
         ],
         "username": "윤채영",
         "phoneNumber": "1799",
-        "__collections__": {}
-      },
-      "이미-0710": {
-        "phoneNumber": "0710",
-        "walks": [
-          { "createdAt": "2021-08-11T06:58:29.730Z", "walkCount": 3666 }
-        ],
-        "username": "이미현",
         "__collections__": {}
       },
       "이미현-0710": {
