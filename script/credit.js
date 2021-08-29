@@ -45,51 +45,11 @@ readTextFile("../users.json", function (text) {
     }
   }
 
-  // userSet.forEach((v, k) => {
-  // const td = document.createElement("td");
-  // td.textContent = v;
-  // tdArr.push(td);
-  // console.log(v);
-
-  // countOfTd++;
-
-  // if (countOfTd === 4) {
-  //   const tr = document.createElement("tr");
-  //   tr.append(tdArr[0], tdArr[1], tdArr[2], tdArr[3]);
-  //   countOfTd = 0;
-  // }
-  // });
-
-  // function addWalkLogTable(username, phoneNumber, walkCount, totalWalkCount) {
-  //   const tr = document.createElement("tr");
-  //   const tdUsername = document.createElement("td");
-  //   const tdPhoneNumber = document.createElement("td");
-  //   const tdWalkCount = document.createElement("td");
-  //   const tdTotalWalkCount = document.createElement("td");
-
-  //   tdUsername.setAttribute("class", "username");
-  //   tdPhoneNumber.setAttribute("class", "phoneNumber");
-  //   tdWalkCount.setAttribute("class", "walkCount");
-  //   tdTotalWalkCount.setAttribute("class", "totalWalkCount");
-  //   tdUsername.textContent = username;
-  //   tdPhoneNumber.textContent = phoneNumber;
-  //   tdWalkCount.textContent = walkCount;
-  //   tdTotalWalkCount.textContent = totalWalkCount;
-  //   tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
-  //   userTable.appendChild(tr);
-  // }
-
-  // for (let i = 0; i < 5; i++) {
-  //   let name = document.createElement("div");
-  //   name.setAttribute("class", "name");
-  //   name.textContent = "w4m!!";
-
-  //   let x = Math.floor(Math.random() * 1000);
-
-  //   name.style.position = "absolute";
-  //   name.style.top = document.body.clientHeight * x + "px";
-  //   name.style.left = document.body.clientWidth * x + "px";
-
-  //   wrapper.appendChild(name);
-  // }
+  const td1 = document.createElement("td");
+  const td2 = document.createElement("td");
+  td1.textContent = "홍수민";
+  td2.textContent = "황종윤";
+  const tr = document.createElement("tr");
+  tr.append(td1, td2);
+  users.appendChild(tr);
 });
