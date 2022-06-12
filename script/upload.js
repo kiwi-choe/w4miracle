@@ -28,15 +28,14 @@ db.settings({
   timestampsInSnapshots: true,
 });
 
-const COL_PHOTOS = "photos";
+const COL_PHOTOS = "2022_photos";
 // Initialize Firebase [END]
 
 function init() {
   initView();
-  selectPhotos()
-    .then(() => {
-      showLoadPhotoLoadingView(false);
-    });
+  selectPhotos().then(() => {
+    showLoadPhotoLoadingView(false);
+  });
 }
 init();
 
@@ -111,15 +110,15 @@ function getPhotosFromLocalStorage() {
 }
 
 function isPhotosInLocalStorage() {
-  return localStorage.getItem("photos")
+  return localStorage.getItem("photos");
 }
 
 function addToLocalStorage(photos) {
-  localStorage.setItem("photos", JSON.stringify(photos))
+  localStorage.setItem("photos", JSON.stringify(photos));
 }
 
 async function getPhotosFromDB() {
-  console.log('db 조회')
+  console.log("db 조회");
   const photos = await db
     .collection(COL_PHOTOS)
     .orderBy("createdAt", "asc")
@@ -154,7 +153,7 @@ async function getPhotoURL(response) {
 async function savePhotoToStorage(photo) {
   const today = new Date().toISOString();
   const storageRef = storage.ref();
-  const path = storageRef.child(`image/${today}`);
+  const path = storageRef.child(`2022_image/${today}`);
   const response = await path.put(photo); // storage에 저장
   return response;
 }

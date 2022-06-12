@@ -1,0 +1,23 @@
+{
+  "q1": {
+    "qstn": "나에게 선교란?",
+    "answrArr": [
+      {
+        "text": "1) 봉사",
+        "url": "somewhere1"
+      },
+      {
+        "text": "2) 복음",
+        "url": "somewhere2"
+      },
+      {
+        "text": "3) 헌금",
+        "url": "somewhere2"
+      },
+      {
+        "text": "4) 기도",
+        "url": "somewhere2"
+      }
+    ]
+  }
+}
