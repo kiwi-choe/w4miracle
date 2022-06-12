@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Walking For Miracle</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/credit.css" />
+    <link rel="stylesheet" href="../css/participateStyle.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <img
+          class="header__logo"
+          src="../assets/imgs/w4m_white.png"
+          alt="img_logo"
+        />
+      </header>
+      <div id="container">
+        <div class="inner">
+          <section id="chart">
+            <div class="chart__inner">
+              <span class="chart__text">지금까지</span>
+              <span class="chart__value"></span>
+              <span class="chart__text">걸음 걸었어요.</span>
+            </div>
+            <div class="chart__desk">
+              <img
+                id="chart__deskImg"
+                src="../assets/imgs/cute_desk.png"
+                alt="deskImg"
+              /><span class="chart__numOfDesks"></span>
+            </div>
+            <div class="chart__process">
+              <div class="process__track"></div>
+            </div>
+          </section>
+
+          <section id="thumbnail__container">
+            <div>
+              <img
+                class="aa"
+                src="../assets/imgs/gallery_banner.png"
+                alt="good"
+              />
+            </div>
+          </section>
+
+          <section id="walkTogetherSection">
+            <div class="walkTogether">
+              워킹포미라클에 <br />
+              함께한 빛의교회 가족들
+            </div>
+          </section>
+
+          <section id="board">
+            <table>
+              <tbody id="users"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="../script/app.js"></script>
+    <script src="../script/credit.js"></script>
+  </body>
+</html>
