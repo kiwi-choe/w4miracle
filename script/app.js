@@ -86,13 +86,6 @@ function showDeskAnimation() {
 async function onSubmit(info) {
   info.preventDefault();
 
-  console.log(
-    username.value,
-    phoneNumber.value,
-    missionField.value,
-    walkCount.value
-  );
-
   if (
     !validateInputData(
       username.value,
@@ -116,16 +109,16 @@ async function onSubmit(info) {
   }
 
   try {
-    const existUserWalks = await userExist(username.value, phoneNumber.value);
+    const { userWalk } = await userExist(username.value, phoneNumber.value);
 
-    console.log("existUserWalks:", existUserWalks);
-
-    if (existUserWalks) {
+    if (userWalk) {
       await updateUser({
         username: username.value,
         phoneNumber: phoneNumber.value,
         missionField: missionField.value,
-        existUserWalks,
+        existUserWalks: userWalk,
+        // existMissionField: userMissionField,
+        // existCompanion: userCompanion,
         walkCount: walkCount.value,
         companion: companion.value,
       });
@@ -355,19 +348,33 @@ async function updateUser({
   phoneNumber,
   missionField,
   existUserWalks,
+  // existMissionField,
+  // existCompanion,
   walkCount,
   companion,
 }) {
   const today = new Date();
   const userWalk = {
     walkCount: Number(walkCount),
+    missionField: String(missionField),
+    companion: String(companion),
     createdAt: today.toISOString(),
   };
+  // const userMissionField = {
+  // missionField: String(missionField),
+  //   createdAt: today.toISOString(),
+  // };
+  // const userCompanion = {
+  // companion: String(companion),
+  //   createdAt: today.toISOString(),
+  // };
   await db
     .collection(COL_USERS)
     .doc(getUserDocName(username, phoneNumber))
     .update({
       walks: existUserWalks.concat(userWalk),
+      // missionField: existMissionField.concat(userMissionField),
+      // companion: existCompanion.concat(userCompanion),
     });
 }
 
@@ -381,6 +388,9 @@ async function createUser(
   const today = new Date();
   const userWalk = {
     walkCount: Number(walkCount),
+    missionField: missionField,
+    walkCount: Number(walkCount),
+    companion: companion,
     createdAt: today.toISOString(),
   };
   await db
@@ -389,9 +399,7 @@ async function createUser(
     .set({
       username: username,
       phoneNumber: number,
-      missionField: [missionField],
       walks: [userWalk],
-      companion: [companion],
     });
 }
 
@@ -438,7 +446,25 @@ async function userExist(username, phoneNumber) {
     .catch(() => false);
 
   // const
-  return userWalk;
+  // const userMissionField = await db
+  //   .collection(COL_USERS)
+  //   .doc(getUserDocName(username, phoneNumber))
+  //   .get("missionField")
+  //   .then((snapshot) => snapshot.data().missionField)
+  //   .catch(() => false);
+
+  // const userCompanion = await db
+  //   .collection(COL_USERS)
+  //   .doc(getUserDocName(username, phoneNumber))
+  //   .get("companion")
+  //   .then((snapshot) => snapshot.data().companion)
+  //   .catch(() => false);
+
+  return {
+    userWalk,
+    // userMissionField,
+    // userCompanion,
+  };
 }
 
 thumbnailContainer.addEventListener("click", () => {
