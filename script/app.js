@@ -1,26 +1,30 @@
 const walkCountInputForm = document.getElementById("walkCount-form");
-const username = walkCountInputForm.querySelector("#username");
-const phoneNumber = walkCountInputForm.querySelector("#phoneNumber");
-const walkCount = walkCountInputForm.querySelector("#walkCount");
+
+let username = walkCountInputForm.querySelector("#username");
+let phoneNumber = walkCountInputForm.querySelector("#phoneNumber");
+let missionField = walkCountInputForm.querySelector("#missionField");
+let walkCount = walkCountInputForm.querySelector("#walkCount");
+let companion = walkCountInputForm.querySelector("#companion");
+
 const totalWalkCnt = document.querySelector(".chart__value");
 const elNumOfDesks = document.querySelector(".chart__numOfDesks");
 const elDeskImg = document.querySelector("#chart__deskImg");
-const thumbnailContainer = document.querySelector('#thumbnail__container');
+const thumbnailContainer = document.querySelector("#thumbnail__container");
 const userTable = document.querySelector("#users");
 const elBoard = document.querySelector("#board");
 const seeMoreBtn = document.querySelector("#seeMore");
 const headerLogoSection = document.querySelector("#header");
 const deskAnimImage = document.querySelector(".img_desk_anmation");
 
-const COL_ADMIN = "admin";
-const COL_USERS = "users";
-const COL_WALKLOG = "walkLog";
+const COL_ADMIN = "2022_admin";
+const COL_USERS = "2022_users";
+const COL_WALKLOG = "2022_walkLog";
 const DOC_CHART = "chart";
 const DOC_URLS = "urls";
 const GET_WALKLOG_LIMIT_COUNT = 5;
 let lastVisible = -1;
 
-// Initialize Firebase
+//Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyCg-XnCKH6zScJY_04rXUf0Fmxbza_JnGU",
   authDomain: "walking4miracle.firebaseapp.com",
@@ -35,12 +39,14 @@ const db = firebase.firestore();
 db.settings({
   timestampsInSnapshots: true,
 });
-// == Initialize Firebase
+//Initialize Firebase
 
 function clearInput() {
   username.value = "";
   phoneNumber.value = "";
+  missionField.value = "";
   walkCount.value = "";
+  companion.value = "";
 }
 
 function onClickHeaderLogo() {
@@ -54,17 +60,17 @@ function selectTotalWalkCount() {
 }
 selectTotalWalkCount();
 
-// GET  입력된 걸음 목록
+// GET 입력된 걸음 목록
 function selectUserList() {
   getWalkLogs();
 }
 selectUserList();
 
 // 누적 책상 수 가져오기
-async function selectNumOfDesks() {
-  await showNumOfDesks();
-}
-selectNumOfDesks();
+// async function selectNumOfDesks() {
+// await showNumOfDesks();
+// }
+// selectNumOfDesks();
 
 deskAnimImage.addEventListener("animationstart", () => {});
 deskAnimImage.addEventListener("animationend", () => {
@@ -80,8 +86,22 @@ function showDeskAnimation() {
 async function onSubmit(info) {
   info.preventDefault();
 
-  if (!validateInputData(username.value, phoneNumber.value, walkCount.value)) {
-    alert("이름, 번호, 걸음수 입력해주세요!");
+  console.log(
+    username.value,
+    phoneNumber.value,
+    missionField.value,
+    walkCount.value
+  );
+
+  if (
+    !validateInputData(
+      username.value,
+      phoneNumber.value,
+      missionField.value,
+      walkCount.value
+    )
+  ) {
+    alert("이름, 번호, 사역지, 걸음수를 입력해주세요!");
     return;
   }
 
@@ -97,28 +117,41 @@ async function onSubmit(info) {
 
   try {
     const existUserWalks = await userExist(username.value, phoneNumber.value);
+
+    console.log("existUserWalks:", existUserWalks);
+
     if (existUserWalks) {
-      await updateUser(
+      await updateUser({
+        username: username.value,
+        phoneNumber: phoneNumber.value,
+        missionField: missionField.value,
+        existUserWalks,
+        walkCount: walkCount.value,
+        companion: companion.value,
+      });
+    } else {
+      await createUser(
         username.value,
         phoneNumber.value,
-        existUserWalks,
-        walkCount.value
+        missionField.value,
+        walkCount.value,
+        companion.value
       );
-    } else {
-      await createUser(username.value, phoneNumber.value, walkCount.value);
     }
 
     // POST 걸음데이타
     const latestTotalWalkCount = await getTotalWalkCount();
-    addWalkLog(
-      username.value,
-      phoneNumber.value,
+    addWalkLog({
+      username: username.value,
+      phoneNumber: phoneNumber.value,
+      missionField: missionField.value,
       latestTotalWalkCount,
-      walkCount.value
-    );
+      walkCount: walkCount.value,
+      companion: companion.value,
+    });
 
     await updateNumOfDesks(latestTotalWalkCount, walkCount.value);
-    showNumOfDesks();
+    // showNumOfDesks();
   } catch (e) {
     console.log(e);
   }
@@ -136,14 +169,14 @@ async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
     });
 }
 
-async function showNumOfDesks() {
-  const numOfDesks = await getNumOfDesks();
+// async function showNumOfDesks() {
+//   const numOfDesks = await getNumOfDesks();
 
-  if (numOfDesks !== 0) {
-    elDeskImg.style.display = "inline";
-    elNumOfDesks.textContent = " x " + numOfDesks;
-  }
-}
+//   if (numOfDesks !== 0) {
+//     elDeskImg.style.display = "inline";
+//     elNumOfDesks.textContent = " x " + numOfDesks;
+//   }
+// }
 
 function showCompletedMsg(username, walkCount) {
   completedMsg.innerText = `${username} ${walkCount}걸음 입력 완료!`;
@@ -157,9 +190,14 @@ function showSeeMoreButton() {
   seeMoreBtn.style.setProperty("display", "block");
 }
 
-function validateInputData(username, phoneNumber, walkCount) {
+function validateInputData(username, phoneNumber, missionField, walkCount) {
   return (
-    username && phoneNumber && walkCount && walkCount > 0 && String(phoneNumber).length === 4
+    username &&
+    phoneNumber &&
+    missionField &&
+    walkCount &&
+    walkCount > 0 &&
+    String(phoneNumber).length === 4
   );
 }
 
@@ -182,7 +220,7 @@ function onClickSeeMore() {
   if (isDoubleClicked() === true) {
     return;
   }
-  
+
   getNextWalkLogs();
 }
 seeMoreBtn.addEventListener("click", onClickSeeMore);
@@ -312,7 +350,14 @@ function isNumber(walkCount) {
   return String(walkCountNo) !== "NaN";
 }
 
-async function updateUser(username, number, existUserWalks, walkCount) {
+async function updateUser({
+  username,
+  phoneNumber,
+  missionField,
+  existUserWalks,
+  walkCount,
+  companion,
+}) {
   const today = new Date();
   const userWalk = {
     walkCount: Number(walkCount),
@@ -320,13 +365,19 @@ async function updateUser(username, number, existUserWalks, walkCount) {
   };
   await db
     .collection(COL_USERS)
-    .doc(getUserDocName(username, number))
+    .doc(getUserDocName(username, phoneNumber))
     .update({
       walks: existUserWalks.concat(userWalk),
     });
 }
 
-async function createUser(username, number, walkCount) {
+async function createUser(
+  username,
+  number,
+  missionField,
+  walkCount,
+  companion
+) {
   const today = new Date();
   const userWalk = {
     walkCount: Number(walkCount),
@@ -338,17 +389,28 @@ async function createUser(username, number, walkCount) {
     .set({
       username: username,
       phoneNumber: number,
+      missionField: [missionField],
       walks: [userWalk],
+      companion: [companion],
     });
 }
 
-async function addWalkLog(username, number, latestTotalWalkCount, walkCount) {
+async function addWalkLog({
+  username,
+  phoneNumber,
+  missionField,
+  latestTotalWalkCount,
+  walkCount,
+  companion,
+}) {
   const today = new Date();
   await db
     .collection(COL_WALKLOG)
     .add({
-      username: username,
-      phoneNumber: number,
+      username,
+      phoneNumber,
+      missionField,
+      companion,
       walkCount: Number(walkCount),
       totalWalkCount: latestTotalWalkCount + Number(walkCount),
       createdAt: today.toISOString(),
@@ -374,12 +436,14 @@ async function userExist(username, phoneNumber) {
     .get("walks")
     .then((snapshot) => snapshot.data().walks)
     .catch(() => false);
+
+  // const
   return userWalk;
 }
 
-thumbnailContainer.addEventListener('click', () => {
+thumbnailContainer.addEventListener("click", () => {
   // window.location('../pages/gallary.html')
-})
+});
 
 function onClickThumbnailSection() {
   window.location.href = "../pages/gallary.html";
