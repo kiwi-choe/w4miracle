@@ -189,13 +189,13 @@ td {
   line-height: 1.5em;
 }
 
-#board {
+/* #board {
   display: none;
-}
+} */
 
-#board table {
+/* #board table {
   border-top: 2px solid gray;
-}
+} */
 
 #board table tr {
   font-size: 18px;
