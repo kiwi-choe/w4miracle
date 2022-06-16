@@ -39,7 +39,7 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 90px 0 25px 0;
+  padding: 30px 0 15px 0;
 }
 
 .header__logo {
@@ -116,7 +116,7 @@ a:visited {
   height: 85px;
 }
 
- /* .hashTag {} */
+/* .hashTag {} */
 
 #form {
   margin-top: 40px;
@@ -183,11 +183,11 @@ table {
   vertical-align: middle;
 }
 
-th,td {
+th,
+td {
   vertical-align: middle;
   line-height: 1.5em;
 }
-
 
 #board {
   display: none;
