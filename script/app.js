@@ -267,15 +267,14 @@ async function getWalkLogs() {
         if (doc.length !== 0) {
           elBoard.style.display = "block";
           const walkCount = Number(doc.data().walkCount).toLocaleString();
-          const totalWalkCount = Number(
-            doc.data().totalWalkCount
-          ).toLocaleString();
+          // const totalWalkCount = Number(
+          //   doc.data().totalWalkCount
+          // ).toLocaleString();
 
           addWalkLogTable(
             doc.data().username,
-            doc.data().phoneNumber,
-            walkCount,
-            totalWalkCount
+            doc.data().missionField,
+            walkCount
           );
         }
       });
@@ -298,15 +297,14 @@ async function getNextWalkLogs() {
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
         const walkCount = Number(doc.data().walkCount).toLocaleString();
-        const totalWalkCount = Number(
-          doc.data().totalWalkCount
-        ).toLocaleString();
+        // const totalWalkCount = Number(
+        //   doc.data().totalWalkCount
+        // ).toLocaleString();
 
         addWalkLogTable(
           doc.data().username,
-          doc.data().phoneNumber,
-          walkCount,
-          totalWalkCount
+          doc.data().missionField,
+          walkCount
         );
       });
       // check if last item
@@ -319,22 +317,20 @@ async function getNextWalkLogs() {
     });
 }
 
-function addWalkLogTable(username, phoneNumber, walkCount, totalWalkCount) {
+function addWalkLogTable(username, missionField, walkCount) {
   const tr = document.createElement("tr");
   const tdUsername = document.createElement("td");
-  const tdPhoneNumber = document.createElement("td");
+  const tdMissionField = document.createElement("td");
   const tdWalkCount = document.createElement("td");
-  const tdTotalWalkCount = document.createElement("td");
 
   tdUsername.setAttribute("class", "username");
-  tdPhoneNumber.setAttribute("class", "phoneNumber");
+  tdMissionField.setAttribute("class", "missionField");
   tdWalkCount.setAttribute("class", "walkCount");
-  tdTotalWalkCount.setAttribute("class", "totalWalkCount");
+
   tdUsername.textContent = username;
-  tdPhoneNumber.textContent = phoneNumber;
+  tdMissionField.textContent = missionField;
   tdWalkCount.textContent = walkCount;
-  tdTotalWalkCount.textContent = totalWalkCount;
-  tr.append(tdUsername, tdPhoneNumber, tdWalkCount, tdTotalWalkCount);
+  tr.append(tdUsername, tdMissionField, tdWalkCount);
   userTable.appendChild(tr);
 }
 
