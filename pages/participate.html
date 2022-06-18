@@ -58,7 +58,7 @@
 							<input type="text" id="phoneNumber" placeholder="전화번호 뒤 4자리" />
 						</div>
 						<div class="input__box">
-							<label for="missionField">사역지</label>
+							<label for="phoneNumber">사역지</label>
 							<input type="text" id="missionField" placeholder="사역지" />
 						</div>
 						<div class="input__box">
@@ -66,7 +66,7 @@
 							<input type="text" id="walkCount" placeholder="걸음 수" />
 						</div>
 						<div class="input__box">
-							<label for="companion">함께한 사람</label>
+							<label for="walkCount">함께한 사람</label>
 							<input type="text" id="companion" placeholder="',' 으로 구분해주세요. ex) 아브라함, 이삭" />
 						</div>
 						<div class="btns">
@@ -81,7 +81,7 @@
 							<tr>
 								<th class="username">이름</th>
 								<!-- <th class="phoneNumber">번호 뒤 4자리</th> -->
-								<th class="missionField">사역지</th>
+								<th class="">사역지</th>
 								<th class="walkCount">걸음 수</th>
 								<!-- <th class="totalWalkCount">총 걸음</th> -->
 							</tr>
@@ -113,7 +113,17 @@
 				</p>
 			</div>
 		</footer>
+		<dialog id="qnaPopup">
+			<p>Q. 나에게 선교란?</p>
+			<input type="text" />
+			<div>
+				<button id="doNext">다음에 할게요</button>
+				<button id="confirm">확인</button>
+			</div>
+		</dialog>
 	</div>
+
+	
 	<script src="../script/app.js"></script>
 </body>
 

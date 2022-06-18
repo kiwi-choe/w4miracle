@@ -23,6 +23,10 @@ font-family: 'Poppins', sans-serif; */
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #efefef;
@@ -73,15 +77,63 @@ a:visited {
 }
 
 /* HEADER */
-#header {
+/* #header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+#headerLogo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+header {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  background-color: #ebeae8;
+}
+
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+nav ul {
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: gray;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* header {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #ebeae8;
+} */
+
 .header__logo {
   height: auto;
-  width: 320px;
+  /* width: 320px; */
+  width: 100%;
   margin: 70px 0 20px 0;
 }
 

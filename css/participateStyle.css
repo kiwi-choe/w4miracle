@@ -40,7 +40,6 @@ a:visited {
   justify-content: center;
   align-items: center;
   padding: 30px 0 15px 0;
-  /* padding: 90px 0 25px 0; */
 }
 
 .header__logo {
@@ -102,10 +101,19 @@ a:visited {
 }
 
 .process__track {
-  width: 100%;
   height: 100%;
   border: 3px solid #a9a9a9;
   border-radius: 50%;
+}
+
+#qnaPopup {
+  border: 3px red dotted;
+  width: 100%;
+  height: 90px;
+  /* position: sticky;
+  top: 50%;
+  margin: 0 10%;
+  height: 200px; */
 }
 
 #thumbnail__container {
@@ -116,8 +124,6 @@ a:visited {
   width: 100%;
   height: 85px;
 }
-
-/* .hashTag {} */
 
 #form {
   margin-top: 40px;
@@ -189,14 +195,6 @@ td {
   vertical-align: middle;
   line-height: 1.5em;
 }
-
-/* #board {
-  display: none;
-} */
-
-/* #board table {
-  border-top: 2px solid gray;
-} */
 
 #board table tr {
   font-size: 18px;

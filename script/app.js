@@ -16,6 +16,10 @@ const seeMoreBtn = document.querySelector("#seeMore");
 const headerLogoSection = document.querySelector("#header");
 const deskAnimImage = document.querySelector(".img_desk_anmation");
 
+const modal = document.querySelector("#qnaPopup");
+const doNextBtn = document.querySelector("#doNext");
+const confirmBtn = document.querySelector("#confirm");
+
 const COL_ADMIN = "2022_admin";
 const COL_USERS = "2022_users";
 const COL_WALKLOG = "2022_walkLog";
@@ -85,6 +89,13 @@ function showDeskAnimation() {
 // 입력
 async function onSubmit(info) {
   info.preventDefault();
+
+  alert("서비스 준비중입니다.");
+  return;
+  //
+  modal.showModal();
+
+  return;
 
   if (
     !validateInputData(
@@ -470,4 +481,12 @@ thumbnailContainer.addEventListener("click", () => {
 function onClickThumbnailSection() {
   window.location.href = "../pages/gallary.html";
 }
+
+doNextBtn.addEventListener("click", () => {
+  modal.close();
+});
+confirmBtn.addEventListener("click", () => {
+  modal.close();
+});
+
 thumbnailContainer.addEventListener("click", onClickThumbnailSection);
