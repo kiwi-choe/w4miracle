@@ -16,19 +16,23 @@ const seeMoreBtn = document.querySelector("#seeMore");
 const headerLogoSection = document.querySelector("#header");
 const deskAnimImage = document.querySelector(".img_desk_anmation");
 
-const modal = document.querySelector("#qnaPopup");
-const doNextBtn = document.querySelector("#doNext");
-const confirmBtn = document.querySelector("#confirm");
+// const qnaModal = document.querySelector("#qna_modal");
+// const qnaDoNextBtn = document.querySelector("#qna_doNext");
+// const qnaConfirmBtn = document.querySelector("#qna_confirm");
+// const qnaAnswer = document.querySelector("#qna_answer");
 
 const COL_ADMIN = "2022_admin";
 const COL_USERS = "2022_users";
 const COL_WALKLOG = "2022_walkLog";
 const DOC_CHART = "chart";
 const DOC_URLS = "urls";
+
 const GET_WALKLOG_LIMIT_COUNT = 5;
 let lastVisible = -1;
 
-//Initialize Firebase
+/**
+ * Initialize Firebase
+ */
 const firebaseConfig = {
   apiKey: "AIzaSyCg-XnCKH6zScJY_04rXUf0Fmxbza_JnGU",
   authDomain: "walking4miracle.firebaseapp.com",
@@ -43,8 +47,10 @@ const db = firebase.firestore();
 db.settings({
   timestampsInSnapshots: true,
 });
-//Initialize Firebase
 
+/**
+ * 모든 input 비우기
+ */
 function clearInput() {
   username.value = "";
   phoneNumber.value = "";
@@ -53,49 +59,48 @@ function clearInput() {
   companion.value = "";
 }
 
+/**
+ * 헤더 클릭 시 페이지 이동
+ */
 function onClickHeaderLogo() {
   window.location.href = "../index.html";
 }
-headerLogoSection.addEventListener("click", onClickHeaderLogo);
 
-// GET 총 걸음 수
+/**
+ * GET 총 걸음 수
+ */
 function selectTotalWalkCount() {
   getTotalWalkCount();
 }
-selectTotalWalkCount();
 
-// GET 입력된 걸음 목록
+/**
+ * GET 입력된 걸음 목록
+ */
 function selectUserList() {
   getWalkLogs();
 }
-selectUserList();
 
-// 누적 책상 수 가져오기
-// async function selectNumOfDesks() {
-// await showNumOfDesks();
+/**
+ * @deprecated
+ * 책상 애니메이션
+ */
+// function showDeskAnimation() {
+//   deskAnimImage.style.setProperty("display", "block");
+//   deskAnimImage.classList.toggle("active");
 // }
-// selectNumOfDesks();
 
-deskAnimImage.addEventListener("animationstart", () => {});
-deskAnimImage.addEventListener("animationend", () => {
-  deskAnimImage.classList.remove("active");
-  deskAnimImage.style.setProperty("display", "none");
-});
-function showDeskAnimation() {
-  deskAnimImage.style.setProperty("display", "block");
-  deskAnimImage.classList.toggle("active");
-}
-
-// 입력
+/**
+ * 입력
+ */
 async function onSubmit(info) {
   info.preventDefault();
 
-  alert("서비스 준비중입니다.");
-  return;
+  // alert("서비스 준비중입니다.");
+  // return;
   //
-  modal.showModal();
+  // qnaModal.showModal();
 
-  return;
+  // return;
 
   if (
     !validateInputData(
@@ -160,8 +165,11 @@ async function onSubmit(info) {
     console.log(e);
   }
 }
-walkCountInputForm.addEventListener("submit", onSubmit);
 
+/**
+ * @deprecated
+ * 책상 갯수 수정
+ */
 async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
   const numOfDesks = (latestTotalWalkCount + Number(walkCount)) / 50000;
 
@@ -173,6 +181,10 @@ async function updateNumOfDesks(latestTotalWalkCount, walkCount) {
     });
 }
 
+/**
+ * @deprecated
+ * 책상 수 보여주기
+ */
 // async function showNumOfDesks() {
 //   const numOfDesks = await getNumOfDesks();
 
@@ -205,7 +217,9 @@ function validateInputData(username, phoneNumber, missionField, walkCount) {
   );
 }
 
-// 더보기 더블 클릭 방지
+/**
+ * 더보기 더블 클릭 방지
+ */
 let seeMoreFlag = false;
 function isDoubleClicked() {
   if (seeMoreFlag === true) {
@@ -227,7 +241,7 @@ function onClickSeeMore() {
 
   getNextWalkLogs();
 }
-seeMoreBtn.addEventListener("click", onClickSeeMore);
+
 /**
  * DB
  */
@@ -431,7 +445,7 @@ async function addWalkLog({
       createdAt: today.toISOString(),
     })
     .then(() => {
-      showDeskAnimation();
+      // showDeskAnimation();
       initView();
     });
 }
@@ -474,19 +488,40 @@ async function userExist(username, phoneNumber) {
   };
 }
 
-thumbnailContainer.addEventListener("click", () => {
-  // window.location('../pages/gallary.html')
-});
-
-function onClickThumbnailSection() {
+const onClickThumbnailSection = () => {
   window.location.href = "../pages/gallary.html";
-}
+};
 
-doNextBtn.addEventListener("click", () => {
-  modal.close();
-});
-confirmBtn.addEventListener("click", () => {
-  modal.close();
-});
+// const doQnaNext = () => {
+//   console.log("다음에 할게요.");
+//   qnaModal.close();
+// };
 
+// const confirmQna = () => {
+//   const userQnaAnswer = qnaAnswer.value;
+//   console.log("확인", userQnaAnswer);
+//   qnaModal.close();
+// };
+
+/**
+ * event
+ */
+headerLogoSection.addEventListener("click", onClickHeaderLogo);
 thumbnailContainer.addEventListener("click", onClickThumbnailSection);
+
+deskAnimImage.addEventListener("animationend", () => {
+  deskAnimImage.classList.remove("active");
+  deskAnimImage.style.setProperty("display", "none");
+});
+
+walkCountInputForm.addEventListener("submit", onSubmit);
+seeMoreBtn.addEventListener("click", onClickSeeMore);
+
+// qnaDoNextBtn.addEventListener("click", () => doQnaNext());
+// qnaConfirmBtn.addEventListener("click", () => confirmQna());
+
+/**
+ * init
+ */
+selectTotalWalkCount();
+selectUserList();
