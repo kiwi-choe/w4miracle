@@ -21,9 +21,9 @@ const deskAnimImage = document.querySelector(".img_desk_anmation");
 // const qnaConfirmBtn = document.querySelector("#qna_confirm");
 // const qnaAnswer = document.querySelector("#qna_answer");
 
-const COL_ADMIN = "2022_admin";
-const COL_USERS = "2022_users";
-const COL_WALKLOG = "2022_walkLog";
+const COL_ADMIN = "2023_admin";
+const COL_USERS = "2023_users";
+const COL_WALKLOG = "2023_walkLog";
 const DOC_CHART = "chart";
 const DOC_URLS = "urls";
 
@@ -507,7 +507,7 @@ const onClickThumbnailSection = () => {
  * event
  */
 headerLogoSection.addEventListener("click", onClickHeaderLogo);
-thumbnailContainer.addEventListener("click", onClickThumbnailSection);
+// thumbnailContainer.addEventListener("click", onClickThumbnailSection);
 
 deskAnimImage.addEventListener("animationend", () => {
   deskAnimImage.classList.remove("active");
