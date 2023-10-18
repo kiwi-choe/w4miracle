@@ -161,10 +161,9 @@ nav ul li a {
 
 .btn__participate {
   font-size: 2.2rem;
-  color: #cc063e;
-  /* color: #ededed; */
+  color: #ededed;
   padding: 16px 30px;
-  background-color: #d77900;
+  background-color: #cc063e;
   border-radius: 12px;
   text-decoration: none;
 }
@@ -174,7 +173,6 @@ nav ul li a {
   color: #ededed;
   padding: 15px 50px;
   background-color: #cc063e;
-  /* background-color: #0057b8; */
   border-radius: 20px;
   text-decoration: none;
 }
